@@ -3,12 +3,8 @@ package com.antho.newsreader.viewmodel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
-
-import com.antho.newsreader.Model.News;
+import com.antho.newsreader.Model.NewsListJsonModel;
 import com.antho.newsreader.db.Api;
-
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -17,13 +13,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /****/
 public class NewsViewModel extends ViewModel
 {
-    private MutableLiveData<List<News>> newsList;
+    private MutableLiveData<NewsListJsonModel> newsList;
     //
-    public LiveData<List<News>> getNews()
+    public LiveData<NewsListJsonModel> getNews()
     {
         if (newsList == null)
         {
-            newsList = new MutableLiveData<List<News>>();
+            newsList = new MutableLiveData<NewsListJsonModel>();
             loadNews();
         }
         return newsList;
@@ -35,19 +31,17 @@ public class NewsViewModel extends ViewModel
                 .baseUrl(Api.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-
         Api api = retrofit.create(Api.class);
-        Call<List<News>> call = api.getNews();
-
-        call.enqueue(new Callback<List<News>>()
+        Call<NewsListJsonModel> call = api.getResults();
+        call.enqueue(new Callback<NewsListJsonModel>()
         {
             @Override
-            public void onResponse(Call<List<News>> call, Response<List<News>> response)
+            public void onResponse(Call<NewsListJsonModel> call, Response<NewsListJsonModel> response)
             {
                 newsList.setValue(response.body());
             }
             @Override
-            public void onFailure(Call<List<News>> call, Throwable t)
+            public void onFailure(Call<NewsListJsonModel> call, Throwable t)
             {
             }
         });

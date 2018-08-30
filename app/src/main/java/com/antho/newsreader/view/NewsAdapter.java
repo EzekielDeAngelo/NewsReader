@@ -3,13 +3,16 @@ package com.antho.newsreader.view;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 import com.antho.newsreader.Model.News;
+import com.antho.newsreader.Model.NewsListJsonModel;
 import com.antho.newsreader.R;
 import com.bumptech.glide.Glide;
 
@@ -20,10 +23,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     Context mCtx;
     List<News> newsList;
     //
-    public NewsAdapter(Context mCtx, List<News> newsList)
+    public NewsAdapter(Context mCtx, NewsListJsonModel newsList)
     {
         this.mCtx = mCtx;
-        this.newsList = newsList;
+        this.newsList = newsList.getResults();
     }
     //
     @NonNull
@@ -38,16 +41,16 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     public void onBindViewHolder(@NonNull NewsViewHolder holder, int position)
     {
         News news = newsList.get(position);
-        Glide.with(mCtx)
+        /*Glide.with(mCtx)
                 .load(news.getThumbnailUrl())
                 .into(holder.imageView);
-
+*/
         holder.textView.setText(news.getTitle());
     }
     //
     @Override
     public int getItemCount()
-    {
+    {Log.d("a","VANKIKETAMLZJMLAZK MALZKFR MALKfmlk,j");
         return newsList.size();
     }
     //

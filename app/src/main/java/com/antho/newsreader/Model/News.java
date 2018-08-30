@@ -1,41 +1,30 @@
 package com.antho.newsreader.Model;
-/****/
+
 import com.google.gson.annotations.SerializedName;
-/****/
+
+import java.util.Date;
+import java.util.List;
+
 public class News
 {
-    @SerializedName("id")
-    private Integer id;
     @SerializedName("title")
     private String title;
-    @SerializedName("thumbnailUrl")
-    private String thumbnailUrl;
-    //
-    public News(Integer albumId, Integer id, String title, String url, String thumbnailUrl)
+    @SerializedName("copyright")
+    private String subSection;
+    @SerializedName("subsection")
+    private String section;
+    @SerializedName("last_updated")
+    private Date lastUpdated;
+    @SerializedName("num_results")
+    private Date numResults;
+
+
+    public News(String title, String subSection, String section)
     {
-        this.id = id;
         this.title = title;
-        this.thumbnailUrl = thumbnailUrl;
+        this.subSection = subSection;
+        this.section = section;
     }
-    //
-    public Integer getId()
-    {
-        return id;
-    }
-    public void setId(Integer id)
-    {
-        this.id = id;
-    }
-    //
-    public String getThumbnailUrl()
-    {
-        return thumbnailUrl;
-    }
-    public void setThumbnailUrl(String thumbnailUrl)
-    {
-        this.thumbnailUrl = thumbnailUrl;
-    }
-    //
     public String getTitle()
     {
         return title;
@@ -44,5 +33,23 @@ public class News
     public void setTitle(String title)
     {
         this.title = title;
+    }
+    public String getSubSection()
+    {
+        return subSection;
+    }
+
+    public void setSubSection(String subSection)
+    {
+        this.subSection = subSection;
+    }
+    public String getSection()
+    {
+        return section;
+    }
+
+    public void setSection(String section)
+    {
+        this.section = section;
     }
 }

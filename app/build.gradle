@@ -43,4 +43,8 @@ dependencies {
 
     androidTestImplementation deps.espresso.core
     implementation deps.timber
+
+    implementation deps.moshi
+    implementation deps.autoValueVersion
+    implementation deps.autoValueMoshiVersion
 }

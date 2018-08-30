@@ -1,16 +1,13 @@
 package com.antho.newsreader.db;
 /****/
-import com.antho.newsreader.Model.News;
-
-import java.util.List;
-
+import com.antho.newsreader.Model.NewsListJsonModel;
 import retrofit2.Call;
 import retrofit2.http.GET;
 /****/
 public interface Api
 {
-    String BASE_URL = "https://jsonplaceholder.typicode.com";
-    //https://api.nytimes.com/svc/topstories/v2/home.json
-    @GET("photos")
-    Call<List<News>> getNews();
+    String BASE_URL = "https://api.nytimes.com/svc/topstories/v2/";
+    @GET("home.json?api-key=829b53058f9f400d94c5d44245489fdf")
+
+    Call<NewsListJsonModel> getResults();
 }
