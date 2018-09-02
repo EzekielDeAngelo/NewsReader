@@ -1,18 +1,19 @@
-package com.antho.newsreader.Model;
+package com.antho.newsreader.model;
+/****/
+import com.google.auto.value.AutoValue;
+import com.squareup.moshi.Json;
+import com.squareup.moshi.JsonAdapter;
+import com.squareup.moshi.Moshi;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
-public class NewsListJsonModel
+import java.util.List;
+/****/
+@AutoValue
+public abstract class NewsListJsonModel
 {
-    private ArrayList<News> results;
-    public ArrayList<News> getResults()
+    @Json(name="results")
+    public abstract List<News> results();
+    public static JsonAdapter<NewsListJsonModel> jsonAdapter(Moshi moshi)
     {
-        return results;
-    }
-
-    public void setNews(ArrayList<News> news)
-    {
-        this.results = results;
+        return new AutoValue_NewsListJsonModel.MoshiJsonAdapter(moshi);
     }
 }

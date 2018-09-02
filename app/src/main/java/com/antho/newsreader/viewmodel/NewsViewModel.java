@@ -3,13 +3,16 @@ package com.antho.newsreader.viewmodel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
-import com.antho.newsreader.Model.NewsListJsonModel;
 import com.antho.newsreader.db.Api;
+import com.antho.newsreader.model.AdapterFactory;
+import com.antho.newsreader.model.NewsListJsonModel;
+import com.squareup.moshi.Moshi;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.moshi.MoshiConverterFactory;
 /****/
 public class NewsViewModel extends ViewModel
 {
@@ -27,9 +30,12 @@ public class NewsViewModel extends ViewModel
     //This method is using Retrofit to get the JSON data from URL
     private void loadNews()
     {
+        Moshi moshi = new Moshi.Builder()
+                .add(AdapterFactory.create())
+                .build();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Api.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(MoshiConverterFactory.create(moshi))
                 .build();
         Api api = retrofit.create(Api.class);
         Call<NewsListJsonModel> call = api.getResults();
