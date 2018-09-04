@@ -64,6 +64,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         holder.date.setText(news.date().getDayOfMonth() + "/" + news.date().getMonthValue() + "/" + news.date().getYear() % 100);
         //Title
         holder.title.setText(news.title());
+
     }
     //
     @Override

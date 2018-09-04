@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.MainActivity">
-    <RelativeLayout
+    <!--<RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
@@ -16,10 +16,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <include layout="@layout/content_main"/>
-    </RelativeLayout>
 
-</android.support.constraint.ConstraintLayout>
+
+    </RelativeLayout>-->
+    <include layout="@layout/toolbar_main"
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <include layout="@layout/content_main"/>
+
+</android.support.design.widget.CoordinatorLayout>
 
 <!--
 <android.support.design.widget.AppBarLayout
