@@ -16,15 +16,12 @@ import com.bumptech.glide.Glide;
 import com.jakewharton.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 /****/
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder>
 {
     Context context;
     List<News> newsList;
-
     //
     public NewsAdapter(Context context, NewsListJsonModel newsList)
     {
@@ -51,8 +48,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             .placeholder((R.drawable.ic_launcher_background))
             .error(R.drawable.ic_launcher_background)
             .into(holder.thumbnail);
-
-      /*  Glide.with(context)
+         /*Glide.with(context)
                 .load(news.thumbnail().get(position).thumbnailUrl())
                 .into(holder.thumbnail);*/
         //Section
@@ -83,8 +79,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         TextView section;
         TextView date;
         TextView title;
-
-
         public NewsViewHolder(View itemView)
         {
             super(itemView);

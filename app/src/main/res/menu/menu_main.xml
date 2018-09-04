@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.antho.myapplication.MainActivity">
+    <item
+        android:id="@+id/settings_notifications"
+        android:orderInCategory="100"
+        android:title="@string/settings_notifications"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/settings_help"
+        android:orderInCategory="100"
+        android:title="@string/settings_help"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/settings_about"
+        android:orderInCategory="100"
+        android:title="@string/settings_about"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_search"
+        android:title="@string/search"
+        android:orderInCategory="200"
+        android:icon="@drawable/ic_search"
+        app:showAsAction="ifRoom"
+        />
+
+</menu>
