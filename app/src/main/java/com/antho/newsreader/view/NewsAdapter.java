@@ -35,6 +35,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     {
         View view = LayoutInflater.from(context).inflate(R.layout.recyclerview_layout, parent, false);
         return new NewsViewHolder(view);
+
     }
     //
     @Override
@@ -42,17 +43,28 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     {
         News news = newsList.get(position);
         //Thumbnail
-        Picasso.Builder builder = new Picasso.Builder(context);
-        builder.downloader(new OkHttp3Downloader(context));
-        builder.build().load(news.thumbnail().get(0).thumbnailUrl())
-            .placeholder((R.drawable.ic_launcher_background))
-            .error(R.drawable.ic_launcher_background)
-            .into(holder.thumbnail);
-         /*Glide.with(context)
-                .load(news.thumbnail().get(position).thumbnailUrl())
-                .into(holder.thumbnail);*/
+        if (news.thumbnail() != null)
+        {
+            if (news.thumbnail().size() != 0)
+            {
+                Picasso.Builder builder = new Picasso.Builder(context);
+                builder.downloader(new OkHttp3Downloader(context));
+                builder.build().load(news.thumbnail().get(0).thumbnailUrl())
+                        .into(holder.thumbnail);
+            }
+        }
+        else if (news.mediaThumbnail() != null)
+        {
+            if (news.mediaThumbnail().size() != 0)
+            {
+                Picasso.Builder builder = new Picasso.Builder(context);
+                builder.downloader(new OkHttp3Downloader(context));
+                builder.build().load(news.mediaThumbnail().get(0).mediaThumbnailList().get(0).thumbnailUrl())
+                        .into(holder.thumbnail);
+            }
+        }
         //Section
-        if (news.subsection() == "")
+        if (news.subsection() == null)
         {
             holder.section.setText(news.section());
         }
@@ -61,10 +73,9 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             holder.section.setText(news.section() + " > " + news.subsection());
         }
         //Date
-        holder.date.setText(news.date().getDayOfMonth() + "/" + news.date().getMonthValue() + "/" + news.date().getYear() % 100);
+        //holder.date.setText(news.date().getDayOfMonth() + "/" + news.date().getMonthValue() + "/" + news.date().getYear() % 100);
         //Title
         holder.title.setText(news.title());
-
     }
     //
     @Override

@@ -71,7 +71,7 @@ public class TopStories extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+@Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -91,7 +91,7 @@ public class TopStories extends Fragment {
 
         NewsViewModel model = ViewModelProviders.of(this).get(NewsViewModel.class);
 
-        model.getNews().observe(this, new Observer<NewsListJsonModel>()
+        model.getNews("TopStories").observe(this, new Observer<NewsListJsonModel>()
         {
             @Override
             public void onChanged(@Nullable NewsListJsonModel newsList) {
