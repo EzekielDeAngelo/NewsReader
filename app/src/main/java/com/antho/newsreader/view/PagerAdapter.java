@@ -3,11 +3,10 @@ package com.antho.newsreader.view;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.antho.newsreader.view.fragment.ArticleSearch;
-import com.antho.newsreader.view.fragment.MostPopular;
-import com.antho.newsreader.view.fragment.TopStories;
+import com.antho.newsreader.view.articlesearch.ArticleSearch;
+import com.antho.newsreader.view.mostpopular.MostPopular;
+import com.antho.newsreader.view.topstories.TopStories;
 
 public class PagerAdapter extends FragmentPagerAdapter
 {

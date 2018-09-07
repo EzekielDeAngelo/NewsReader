@@ -28,6 +28,9 @@ task clean(type: Delete) {
 
 ext
 {
+    //rxJavaVersion='2.0.0'
+    //rxAndroidVersion='2.0.0'
+    threeTenVersion = '1.1.0'
     compileSdkVersion = 27
     minSdkVersion = 21
     targetSdkVersion = 27

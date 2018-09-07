@@ -2,8 +2,10 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#dc40ff</color>
+    <color name="tabhighlight">#fff540</color>
     <color name="textColorPrimary">#FFFFFF</color>
+    <color name="textColorSecondary">#87ffffff</color>
     <color name="toolbar">#00b4d1</color>
     <color name="toolbarDark">#388f9e</color>
     <color name="section">#000000</color>

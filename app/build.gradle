@@ -52,10 +52,12 @@ dependencies {
     provided 'com.ryanharter.auto.value:auto-value-moshi-annotations:0.4.5'
     implementation deps.lifecycle.viewmodel
     implementation deps.lifecycle.extensions
-
+    implementation "com.jakewharton.threetenabp:threetenabp:$rootProject.threeTenVersion"
     implementation deps.glide.runtime
     annotationProcessor deps.glide.compiler
+    //implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxJavaVersion"
 
+    //implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroidVersion"
     androidTestImplementation deps.espresso.core
     implementation deps.timber
 

@@ -23,6 +23,7 @@
         android:orderInCategory="200"
         android:icon="@drawable/ic_search"
         app:showAsAction="ifRoom"
+        app:theme="@style/ToolbarSettings"
         />
 
 </menu>

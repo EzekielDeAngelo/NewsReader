@@ -13,7 +13,7 @@
         <item name="colorAccent">@color/colorAccent</item>
 
         <item name="android:statusBarColor">@color/colorAccent</item>
-        <item name="android:elevation">8dp</item>
+
         <!-- Enable these below if you want clicking icons to trigger a ripple effect -->
         <!--
         <item name="selectableItemBackground">?android:selectableItemBackground</item>
@@ -22,16 +22,24 @@
     <style name="ToolbarTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/toolbar</item>
         <item name="colorPrimaryDark">@color/toolbarDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <!--<item name="android:height">@dimen/toolbarHeight</item>-->
-        <!--<item name="android:minHeight">@dimen/toolbarHeight</item>-->
+        <item name="colorAccent">@color/tabhighlight</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="android:textColorSecondary">@color/textColorSecondary</item>
+        <item name="colorControlNormal">@color/textColorPrimary</item>
+
+
         <item name="android:statusBarColor">@color/colorAccent</item>
-        <item name="android:elevation">8dp</item>
+
+
+
     </style>
     <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textColor">@color/textColorPrimary</item>
         <item name="android:textSize">25sp</item>
     </style>
-
+    <style name="ToolbarSettings" parent="ToolbarTheme">
+        <item name="android:textColorSecondary">@color/textColorPrimary</item>
+        <item name="android:textSize">25sp</item>
+    </style>
 
 </resources>
