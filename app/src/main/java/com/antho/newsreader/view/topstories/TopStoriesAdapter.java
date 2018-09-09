@@ -16,7 +16,7 @@ import com.antho.newsreader.R;
 import com.antho.newsreader.model.topstories.TopStoriesNewsList;
 import com.antho.newsreader.view.MainActivity;
 import com.antho.newsreader.view.PagerAdapter;
-import com.antho.newsreader.view.WebViewActivity;
+
 import com.antho.newsreader.viewmodel.TopStoriesViewModel;
 import com.jakewharton.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".view.SearchActivity"
+    android:layout_margin="16dp"
+    tools:showIn="@layout/activity_search">
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Search query term"
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="250dp" />
+    <!--<DatePicker
+        android:id="@+id/planets_spinner"
+        android:layout_width="fill_parent"
+        android:datePickerMode="spinner"
+        android:layout_height="wrap_content" />
+    <DatePicker
+        android:id="@+id/spinner"
+android:datePickerMode="spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />-->
+    <CheckBox
+        android:id="@+id/checkbox_arts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Arts"
+        android:layout_marginTop="12dp"
+
+        android:onClick="onCheckboxClicked"/>
+
+    <CheckBox
+        android:id="@+id/checkbox_business"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Business"
+        android:layout_marginTop="12dp"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="168dp" />
+
+    <CheckBox
+        android:id="@+id/checkbox_entrepreneurs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Entrepreneurs"
+        android:layout_marginTop="12dp"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="158dp" />
+
+    <CheckBox
+        android:id="@+id/checkbox_politics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Politics"
+        android:layout_marginTop="12dp"
+
+        />
+
+    <CheckBox
+        android:id="@+id/checkbox_sports"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sports"
+        android:layout_marginTop="12dp"
+        tools:layout_editor_absoluteX="201dp"
+        tools:layout_editor_absoluteY="246dp" />
+
+    <CheckBox
+        android:id="@+id/checkbox_travel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Travel"
+        android:layout_marginTop="12dp"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="143dp" />
+
+<Switch
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+</LinearLayout>

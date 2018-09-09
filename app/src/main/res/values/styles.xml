@@ -1,4 +1,5 @@
 <resources>
+
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -19,6 +20,7 @@
         <item name="selectableItemBackground">?android:selectableItemBackground</item>
         <item name="selectableItemBackgroundBorderless">?android:selectableItemBackground</item>-->
     </style>
+
     <style name="ToolbarTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/toolbar</item>
         <item name="colorPrimaryDark">@color/toolbarDark</item>
@@ -31,15 +33,20 @@
         <item name="android:statusBarColor">@color/colorAccent</item>
 
 
-
     </style>
+
     <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textColor">@color/textColorPrimary</item>
         <item name="android:textSize">25sp</item>
     </style>
+
     <style name="ToolbarSettings" parent="ToolbarTheme">
         <item name="android:textColorSecondary">@color/textColorPrimary</item>
         <item name="android:textSize">25sp</item>
     </style>
+
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

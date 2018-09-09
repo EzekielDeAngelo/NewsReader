@@ -18,7 +18,7 @@
         android:title="@string/settings_about"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_search"
+        android:id="@+id/search_item"
         android:title="@string/search"
         android:orderInCategory="200"
         android:icon="@drawable/ic_search"
