@@ -9,9 +9,7 @@ import com.squareup.moshi.Json;
 import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
 
-import java.time.ZonedDateTime;
 import java.util.List;
-
 /****/
 @AutoValue
 public abstract class MostPopularNews

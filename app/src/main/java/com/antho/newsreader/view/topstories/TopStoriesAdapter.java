@@ -8,16 +8,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.antho.newsreader.model.topstories.TopStoriesNews;
 import com.antho.newsreader.R;
 import com.antho.newsreader.model.topstories.TopStoriesNewsList;
-import com.antho.newsreader.view.MainActivity;
-import com.antho.newsreader.view.PagerAdapter;
-
-import com.antho.newsreader.viewmodel.TopStoriesViewModel;
 import com.jakewharton.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 
@@ -58,16 +53,6 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.Ne
                         .into(holder.thumbnail);
             }
         }
-        /*else if (news.mediaThumbnail() != null)
-        {
-            /*if (news.mediaThumbnail().size() != 0)
-            {
-                Picasso.Builder builder = new Picasso.Builder(context);
-                builder.downloader(new OkHttp3Downloader(context));
-                builder.build().load(news.mediaThumbnail().get(0).mediaThumbnailList().get(0).thumbnailUrl())
-                        .into(holder.thumbnail);
-            }
-        }*/
         //Section
         if (news.subsection() == "")
         {

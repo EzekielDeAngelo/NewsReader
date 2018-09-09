@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.antho.newsreader.R;
-
 import com.antho.newsreader.model.mostpopular.MostPopularNews;
 import com.antho.newsreader.model.mostpopular.MostPopularNewsList;
 import com.jakewharton.picasso.OkHttp3Downloader;
@@ -38,7 +37,6 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
     {
         View view = LayoutInflater.from(context).inflate(R.layout.recyclerview_layout, parent, false);
         return new NewsViewHolder(view);
-
     }
     //
     @Override
@@ -46,7 +44,6 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
     {
         final MostPopularNews news = newsList.get(position);
         //Thumbnail
-
         if (news.mediaThumbnail() != null)
         {
             if (news.mediaThumbnail().size() != 0)
@@ -57,8 +54,8 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
                         .into(holder.thumbnail);
             }
         }
+        //Section
         holder.section.setText(news.section());
-
         //Date
         holder.date.setText("" + news.date().charAt(8) + news.date().charAt(9) + "/"+ news.date().charAt(5) + news.date().charAt(6) + "/" + news.date().charAt(2) + news.date().charAt(3));
         //Title

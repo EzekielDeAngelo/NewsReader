@@ -1,5 +1,4 @@
 package com.antho.newsreader.model.mostpopular;
-
 /****/
 import android.support.annotation.Nullable;
 import com.antho.newsreader.model.mostpopular.AutoValue_MostPopularMediaThumbnail;
@@ -9,7 +8,6 @@ import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
 
 import java.util.List;
-
 /****/
 @AutoValue
 public abstract class MostPopularMediaThumbnail
