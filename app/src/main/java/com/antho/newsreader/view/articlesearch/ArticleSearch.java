@@ -1,16 +1,22 @@
 package com.antho.newsreader.view.articlesearch;
 
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.antho.newsreader.R;
+import com.antho.newsreader.model.articlesearch.ArticleSearchNewsList;
+import com.antho.newsreader.viewmodel.ArticleSearchViewModel;
 
 
 /**
@@ -71,20 +77,23 @@ public class ArticleSearch extends Fragment {
         return inflater.inflate(R.layout.fragment_article_search, container, false);
     }
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+
         super.onViewCreated(view, savedInstanceState);
-        /*LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview3);
         recyclerView.setLayoutManager(layoutManager);
         //recyclerView.setHasFixedSize(true);
-        NewsViewModel model = ViewModelProviders.of(this).get(NewsViewModel.class);
-        model.getMostPopular("ArticleSearch"  ).observe(this, new Observer<NewsListJsonModel>()
+        ArticleSearchViewModel model = ViewModelProviders.of(this).get(ArticleSearchViewModel.class);
+        model.getNews().observe(this, new Observer<ArticleSearchNewsList>()
         {
+
             @Override
-            public void onChanged(@Nullable NewsListJsonModel newsList) {
-                NewsAdapter adapter = new NewsAdapter(getContext(), newsList);
+            public void onChanged(@Nullable ArticleSearchNewsList newsList) {
+                Log.d("ONCHANGED", "2222222222222222");
+                ArticleSearchAdapter adapter = new ArticleSearchAdapter(getContext(), newsList);
                 recyclerView.setAdapter(adapter);
             }
-        });*/
+        });
     }
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

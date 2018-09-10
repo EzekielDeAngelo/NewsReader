@@ -20,7 +20,9 @@ public class SearchActivity extends AppCompatActivity
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
     //
-    public void onCheckboxClicked(View view)
+
+    //
+    /*public void onCheckboxClicked(View view)
     {
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
@@ -41,5 +43,5 @@ public class SearchActivity extends AppCompatActivity
                 break;
 
         }
-    }
+    }*/
 }

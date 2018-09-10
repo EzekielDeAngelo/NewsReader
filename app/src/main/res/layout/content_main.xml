@@ -9,17 +9,13 @@
     tools:context=".view.MainActivity"
     tools:showIn="@layout/toolbar_main"
     android:layout_below="@+id/toolbar_layout">
-
-<FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/frame_layout">
-    <android.support.v4.view.ViewPager android:layout_height="match_parent"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:id="@+id/pager"
-
-        xmlns:android="http://schemas.android.com/apk/res/android"/>
-</FrameLayout>
-
-
+        android:layout_height="match_parent"
+        android:id="@+id/frame_layout">
+        <android.support.v4.view.ViewPager android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:id="@+id/pager"
+            xmlns:android="http://schemas.android.com/apk/res/android"/>
+    </FrameLayout>
 </android.support.constraint.ConstraintLayout>

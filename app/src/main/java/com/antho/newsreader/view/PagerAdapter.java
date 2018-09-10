@@ -3,6 +3,8 @@ package com.antho.newsreader.view;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.util.Log;
+
 import com.antho.newsreader.view.articlesearch.ArticleSearch;
 import com.antho.newsreader.view.mostpopular.MostPopular;
 import com.antho.newsreader.view.topstories.TopStories;
@@ -20,8 +22,10 @@ public class PagerAdapter extends FragmentPagerAdapter
     @Override
     public Fragment getItem(int position)
     {
+        Log.d("OOOOOOOOOOOOOOOOOOOOOOOOO",""+position);
         switch (position)
         {
+
             case 0: return new TopStories();
             case 1: return new MostPopular();
             case 2: return new ArticleSearch();
