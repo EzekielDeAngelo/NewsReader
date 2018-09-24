@@ -1,11 +1,10 @@
 package com.antho.newsreader.viewmodel;
-/****/
+/** Most popular viewmodel**/
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
 import com.antho.newsreader.db.MostPopularApi;
-
 import com.antho.newsreader.model.AdapterFactory;
 import com.antho.newsreader.model.ZonedDateTimeAdapter;
 import com.antho.newsreader.model.mostpopular.MostPopularNewsList;
@@ -15,13 +14,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-
 import retrofit2.converter.moshi.MoshiConverterFactory;
-/****/
+/**  **/
 public class MostPopularViewModel extends ViewModel
 {
     private MutableLiveData<MostPopularNewsList> mostPopularList;
-    //private MutableLiveData<NewsListJsonModel> articleSearchList;
     // This method is using Retrofit to get the JSON data from URL
     public LiveData<MostPopularNewsList> getNews()
     {
@@ -31,6 +28,7 @@ public class MostPopularViewModel extends ViewModel
         }
         return mostPopularList;
     }
+    //
     private void loadNews()
     {
         Moshi moshi = new Moshi.Builder()
@@ -58,43 +56,3 @@ public class MostPopularViewModel extends ViewModel
         });
     }
 }
-
-        /*case "MostPopular":
-                if (mostPopularList == null)
-                {
-                    mostPopularList = new MutableLiveData<NewsListJsonModel>();
-                    call = api.getMostPopular();
-                    call.enqueue(new Callback<NewsListJsonModel>()
-                    {
-                        @Override
-                        public void onResponse(Call<NewsListJsonModel> call, Response<NewsListJsonModel> response)
-                        {
-                            mostPopularList.setValue(response.body());
-
-                        }
-                        @Override
-                        public void onFailure(Call<NewsListJsonModel> call, Throwable t)
-                        {
-                        }
-                    });
-                }
-                return mostPopularList;
-            case "ArticleSearch":
-                if (articleSearchList == null)
-                {
-                    articleSearchList = new MutableLiveData<NewsListJsonModel>();
-                    call = api.getArticleSearch();
-                    call.enqueue(new Callback<NewsListJsonModel>()
-                    {
-                        @Override
-                        public void onResponse(Call<NewsListJsonModel> call, Response<NewsListJsonModel> response)
-                        {
-                            articleSearchList.setValue(response.body());
-                        }
-                        @Override
-                        public void onFailure(Call<NewsListJsonModel> call, Throwable t)
-                        {
-                        }
-                    });
-                }
-                return articleSearchList;*/

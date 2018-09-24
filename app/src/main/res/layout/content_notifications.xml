@@ -6,10 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".view.SearchActivity"
+    tools:context=".view.activities.search.SearchActivity"
     android:layout_margin="16dp"
     tools:showIn="@layout/activity_search">
-
     <EditText
         android:id="@+id/editText"
         android:layout_width="wrap_content"
@@ -26,13 +25,11 @@
         android:layout_height="wrap_content" />
     <DatePicker
         android:id="@+id/spinner"
-android:datePickerMode="spinner"
+        android:datePickerMode="spinner"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />-->
-
-<include layout="@layout/checkboxes_layout"/>
-<Switch
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" />
-
+    <include layout="@layout/checkboxes_layout"/>
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>

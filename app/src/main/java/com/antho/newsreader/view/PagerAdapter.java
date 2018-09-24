@@ -1,14 +1,13 @@
 package com.antho.newsreader.view;
-/****/
+/** Pager adapter **/
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.util.Log;
 
-import com.antho.newsreader.view.articlesearch.ArticleSearch;
-import com.antho.newsreader.view.mostpopular.MostPopular;
-import com.antho.newsreader.view.topstories.TopStories;
-/****/
+import com.antho.newsreader.view.fragments.sport.Sports;
+import com.antho.newsreader.view.fragments.mostpopular.MostPopular;
+import com.antho.newsreader.view.fragments.topstories.TopStories;
+/** Handle viewpager navigation **/
 public class PagerAdapter extends FragmentPagerAdapter
 {
     int tabsCount;
@@ -18,27 +17,25 @@ public class PagerAdapter extends FragmentPagerAdapter
         super(fm);
         this.tabsCount = tabsCount;
     }
-    //
+    // Return fragment based on given parameter
     @Override
     public Fragment getItem(int position)
     {
-        Log.d("OOOOOOOOOOOOOOOOOOOOOOOOO",""+position);
         switch (position)
         {
-
             case 0: return new TopStories();
             case 1: return new MostPopular();
-            case 2: return new ArticleSearch();
+            case 2: return new Sports();
             default: return null;
         }
     }
-    //
+    // Return the number of viewpager's tab
     @Override
     public int getCount()
     {
         return tabsCount;
     }
-    //
+    // Return fragment title based on given parameter
     @Override
     public CharSequence getPageTitle(int position)
     {

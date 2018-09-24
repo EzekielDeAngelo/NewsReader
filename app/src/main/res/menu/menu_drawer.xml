@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<!-- Handle navigation drawer items -->
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android" >
     <group
         android:id="@+id/group_settings"
         android:checkableBehavior="single">
@@ -16,16 +18,12 @@
         android:id="@+id/group_news">
         <item
         android:id="@+id/nav_top_stories"
-
         android:title="@string/top_stories" />
         <item
             android:id="@+id/nav_most_popular"
-
             android:title="@string/most_popular" />
         <item
-            android:id="@+id/nav_article_search"
-
-            android:title="@string/article_search" />
-
+            android:id="@+id/nav_sports"
+            android:title="@string/sports" />
     </group>
 </menu>

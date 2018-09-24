@@ -1,26 +1,20 @@
 <resources>
-
+    <!-- Base application theme -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <!-- Base application theme. -->
+    <!-- Application bar theme -->
     <style name="AppbarTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/toolbar</item>
         <item name="colorPrimaryDark">@color/toolbarDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-
-        <item name="android:statusBarColor">@color/colorAccent</item>
-
         <!-- Enable these below if you want clicking icons to trigger a ripple effect -->
-        <!--
-        <item name="selectableItemBackground">?android:selectableItemBackground</item>
+        <!--<item name="selectableItemBackground">?android:selectableItemBackground</item>
         <item name="selectableItemBackgroundBorderless">?android:selectableItemBackground</item>-->
     </style>
-
+    <!-- Toolbar theme -->
     <style name="ToolbarTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/toolbar</item>
         <item name="colorPrimaryDark">@color/toolbarDark</item>
@@ -28,25 +22,17 @@
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
         <item name="android:textColorSecondary">@color/textColorSecondary</item>
         <item name="colorControlNormal">@color/textColorPrimary</item>
-
-
-        <item name="android:statusBarColor">@color/colorAccent</item>
-
-
     </style>
-
+    <!-- Toolbar title -->
     <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textColor">@color/textColorPrimary</item>
         <item name="android:textSize">25sp</item>
     </style>
-
+    <!-- Toolbar settings -->
     <style name="ToolbarSettings" parent="ToolbarTheme">
         <item name="android:textColorSecondary">@color/textColorPrimary</item>
         <item name="android:textSize">25sp</item>
     </style>
-
     <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
     <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
 </resources>

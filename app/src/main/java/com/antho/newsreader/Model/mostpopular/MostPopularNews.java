@@ -1,6 +1,5 @@
 package com.antho.newsreader.model.mostpopular;
-
-/****/
+/** Most popular news **/
 import android.support.annotation.Nullable;
 
 import com.antho.newsreader.model.mostpopular.AutoValue_MostPopularNews;
@@ -10,7 +9,7 @@ import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
 
 import java.util.List;
-/****/
+/** Data model for news objects in most popular API **/
 @AutoValue
 public abstract class MostPopularNews
 {
@@ -23,6 +22,7 @@ public abstract class MostPopularNews
     @Nullable
     @Json (name="media")
     public abstract List<MostPopularMediaThumbnail> mediaThumbnail();
+    // Static factory method to access the package
     public static JsonAdapter<MostPopularNews> jsonAdapter(Moshi moshi)
     {
         return new AutoValue_MostPopularNews.MoshiJsonAdapter(moshi);

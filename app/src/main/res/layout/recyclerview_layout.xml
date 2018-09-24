@@ -33,13 +33,13 @@
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:textColor="@color/section"/>
+                android:textColor="@color/recyclerviewTextColorPrimary"/>
             <TextView
                 android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
-                android:textColor="@color/date"
+                android:textColor="@color/recyclerviewTextColorSecondary"
                 android:layout_alignParentEnd="true"/>
             <TextView
                 android:id="@+id/title"
