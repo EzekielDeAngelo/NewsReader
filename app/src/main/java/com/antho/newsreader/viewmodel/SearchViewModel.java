@@ -42,7 +42,7 @@ public class SearchViewModel extends ViewModel
             .build();
         SearchApi api = retrofit.create(SearchApi.class);
         articleSearchList = new MutableLiveData<com.antho.newsreader.model.articlesearch.Response>();
-        Call<com.antho.newsreader.model.articlesearch.Response> call = api.getArticleSearch("docs");
+        Call<com.antho.newsreader.model.articlesearch.Response> call = api.getArticleSearch();
         call.enqueue(new Callback<com.antho.newsreader.model.articlesearch.Response>()
         {
             @Override

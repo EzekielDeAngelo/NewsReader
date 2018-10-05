@@ -38,8 +38,8 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdap
     public void onBindViewHolder(@NonNull NewsViewHolder holder, int position)
     {
         final Doc news = newsList.get(position);
-        holder.section.setText(news.snippet());
-        holder.title.setText(news.webUrl());
+        holder.section.setText(news.headline().mainHeadline());
+        holder.title.setText(news.headline().printHeadline());
     }
     //
     @Override

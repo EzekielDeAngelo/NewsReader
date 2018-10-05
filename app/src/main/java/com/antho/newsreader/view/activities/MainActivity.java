@@ -20,7 +20,7 @@ import com.antho.newsreader.view.fragments.mostpopular.MostPopular;
 import com.antho.newsreader.view.fragments.sport.Sports;
 import com.antho.newsreader.view.fragments.topstories.TopStories;
 /** Load UI elements on application startup **/
-public class MainActivity extends AppCompatActivity implements TopStories.OnFragmentInteractionListener, MostPopular.OnFragmentInteractionListener, Sports.OnFragmentInteractionListener, NavigationView.OnNavigationItemSelectedListener
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
     // Set up toolbar, navigation drawer and viewpager
     @Override
@@ -68,11 +68,6 @@ public class MainActivity extends AppCompatActivity implements TopStories.OnFrag
         {
             getSupportActionBar().setTitle("News");
         }
-    }
-    //
-    @Override
-    public void onFragmentInteraction(Uri uri)
-    {
     }
     // Inflate the menu : this adds items to the action bar if it is present
     @Override

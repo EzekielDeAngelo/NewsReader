@@ -10,8 +10,27 @@ import java.util.List;
 @AutoValue
 public abstract class Doc
 {
+    @Json(name = "_id")
+    public abstract String id();
     @Json(name = "web_url")
     public abstract String webUrl();
+    @Json(name = "multimedia")
+    public abstract List<Multimedia> multimedia();
+    @Json (name = "headline")
+    public abstract Headline headline();
+    @Json(name = "pub_date")
+    public abstract  String pubDate();
+    @Json(name = "document_type")
+    public abstract String documentType();
+    @Json(name = "type_of_material")
+    public abstract String typeOfMaterial();
+
+    @Json(name = "word_count")
+    public abstract Integer wordCount();
+    @Json(name = "score")
+    public abstract Integer score();
+    @Json(name = "news_desk")
+    public abstract String newsDesk();
     @Json(name = "snippet")
     public abstract String snippet();
     @Json(name = "abstract")
@@ -20,22 +39,6 @@ public abstract class Doc
     public abstract String printPage();
     @Json(name = "source")
     public abstract String source();
-    @Json(name = "multimedia")
-    public abstract List<Object> multimedia();
-    @Json(name = "pub_date")
-    public abstract  String pubDate();
-    @Json(name = "document_type")
-    public abstract String documentType();
-    @Json(name = "type_of_material")
-    public abstract String typeOfMaterial();
-    @Json(name = "_id")
-    public abstract String id();
-    @Json(name = "word_count")
-    public abstract Integer wordCount();
-    @Json(name = "score")
-    public abstract Integer score();
-    @Json(name = "news_desk")
-    public abstract String newsDesk();
     //
     public static JsonAdapter<Doc> jsonAdapter(Moshi moshi)
     {
