@@ -1,11 +1,13 @@
 package com.antho.newsreader.model;
 /** Zoned date time adapter **/
-import android.support.annotation.NonNull;
+
 
 import com.squareup.moshi.FromJson;
 import com.squareup.moshi.ToJson;
-// Three Ten ABP Version : implementation "com.jakewharton.threetenabp:threetenabp:$threeTenVersion" /// threeTenVersion = '1.1.0'
-import java.time.ZonedDateTime;
+import org.threeten.bp.ZonedDateTime;
+
+import io.reactivex.annotations.NonNull;
+//import java.time.ZonedDateTime;
 /**  **/
 public class ZonedDateTimeAdapter
 {

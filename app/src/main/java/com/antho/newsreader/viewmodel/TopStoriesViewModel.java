@@ -10,6 +10,8 @@ import com.antho.newsreader.model.ZonedDateTimeAdapter;
 import com.antho.newsreader.model.topstories.TopStoriesNewsList;
 import com.squareup.moshi.Moshi;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -18,9 +20,24 @@ import retrofit2.converter.moshi.MoshiConverterFactory;
 /**  **/
 public class TopStoriesViewModel extends ViewModel
 {
+    private static TopStoriesViewModel ourInstance = null;
     private MutableLiveData<TopStoriesNewsList> topStoriesList;
     private MutableLiveData<TopStoriesNewsList> sportsList;
     private String storiesCategory;
+    // Test
+    public MutableLiveData<TopStoriesNewsList> getNotes() {
+        return topStoriesList;
+    }
+    public static TopStoriesViewModel getInstance()
+    {
+        if(ourInstance == null)
+        {
+            ourInstance = new TopStoriesViewModel();
+            ourInstance.getNews("Top Stories");
+
+        }
+        return ourInstance;
+    }
     // This method is using Retrofit to get the JSON data from URL
     public LiveData<TopStoriesNewsList> getNews(String category)
     {
