@@ -8,7 +8,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.3'
+        classpath 'com.android.tools.build:gradle:3.2.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -30,21 +30,19 @@ allprojects {
 */
 ext
 {
-    //rxJavaVersion='2.0.0'
-    //rxAndroidVersion='2.0.0'
-    threeTenVersion = '1.1.0'
     compileSdkVersion = 27
     minSdkVersion = 21
     targetSdkVersion = 27
+
+    supportLibraryVersion = '28.0.0-rc01'
+    lifecycleVersion = '1.1.1'
+    retrofitVersion = '2.3.0'
+    buildToolsVersion = '26.0.2'
+    threeTenVersion = '1.1.0'
     picassoVersion = '2.5.2'
     picasso2Version = '1.1.0'
-    compileSdkVersion = 27
-    buildToolsVersion = '26.0.2'
-    minSdkVersion = 21
-    targetSdkVersion = 27
-    supportLibraryVersion = '27.1.1'
     daggerVersion = '2.11'
-    retrofitVersion = '2.3.0'
+    supportVersion = '27.1.1'
     moshiVersion = '1.5.0'
     autoValueVersion = '1.5.1'
     autoValueMoshiVersion = '0.4.3'
@@ -54,26 +52,13 @@ ext
     rxRelayVersion = '2.0.0'
     conductorVersion = '2.1.4'
     timberVersion = '4.7.1'
-    threeTenVersion = '1.1.0'
+
     butterKnifeVersion = '8.8.1'
     mockitoVersion = '2.21.0'
-
+    espressoVersion = "3.0.1"
     okhttpVersion = '3.9.1'
 }
 repositories {
     mavenCentral()
-}
-dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-}
-compileKotlin {
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-}
-compileTestKotlin {
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
 }
 
