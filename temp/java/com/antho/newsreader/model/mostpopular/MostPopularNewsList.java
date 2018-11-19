@@ -1,6 +1,6 @@
-package com.antho.newsreader.model.mostpopular;
+package com.antho.newsreader.model.popular;
 /****/
-import com.antho.newsreader.model.mostpopular.AutoValue_MostPopularNewsList;
+import com.antho.newsreader.model.popular.AutoValue_MostPopularNewsList;
 import com.google.auto.value.AutoValue;
 import com.squareup.moshi.Json;
 import com.squareup.moshi.JsonAdapter;

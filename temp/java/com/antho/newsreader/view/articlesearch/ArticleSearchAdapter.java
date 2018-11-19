@@ -10,8 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.antho.newsreader.R;
-import com.antho.newsreader.model.articlesearch.ArticleSearchNews;
-import com.antho.newsreader.model.articlesearch.ArticleSearchNewsList;
+import com.antho.newsreader.model.search.ArticleSearchNews;
+import com.antho.newsreader.model.search.ArticleSearchNewsList;
 
 import java.util.List;
 

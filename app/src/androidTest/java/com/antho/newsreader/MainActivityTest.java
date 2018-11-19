@@ -6,7 +6,7 @@ import android.support.test.rule.ActivityTestRule;
 import android.view.View;
 
 import com.antho.newsreader.view.activities.MainActivity;
-import com.antho.newsreader.view.activities.NotificationsActivity;
+import com.antho.newsreader.view.activities.notifications.NotificationsActivity;
 import com.antho.newsreader.view.activities.search.SearchActivity;
 
 import org.junit.After;

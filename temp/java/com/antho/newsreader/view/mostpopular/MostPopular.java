@@ -15,7 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.antho.newsreader.R;
-import com.antho.newsreader.model.mostpopular.MostPopularNewsList;
+import com.antho.newsreader.model.popular.MostPopularNewsList;
 import com.antho.newsreader.viewmodel.MostPopularViewModel;
 
 

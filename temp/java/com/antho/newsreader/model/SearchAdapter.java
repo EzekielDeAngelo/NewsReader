@@ -3,8 +3,8 @@ package com.antho.newsreader.model;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.antho.newsreader.model.articlesearch.ArticleSearchNews;
-import com.antho.newsreader.model.articlesearch.ArticleSearchNewsSubList;
+import com.antho.newsreader.model.search.ArticleSearchNews;
+import com.antho.newsreader.model.search.ArticleSearchNewsSubList;
 import com.google.gson.JsonObject;
 import com.squareup.moshi.FromJson;
 import com.squareup.moshi.ToJson;

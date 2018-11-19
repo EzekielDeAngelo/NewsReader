@@ -3,7 +3,6 @@ package com.antho.newsreader;
 import android.support.test.rule.ActivityTestRule;
 import android.view.View;
 
-import com.antho.newsreader.view.activities.NotificationsActivity;
 import com.antho.newsreader.view.activities.search.SearchActivity;
 
 import org.junit.Before;

@@ -7,7 +7,7 @@ import com.antho.newsreader.db.TopStoriesApi;
 
 import com.antho.newsreader.model.AdapterFactory;
 import com.antho.newsreader.model.ZonedDateTimeAdapter;
-import com.antho.newsreader.model.topstories.TopStoriesNewsList;
+import com.antho.newsreader.model.news.TopStoriesNewsList;
 import com.squareup.moshi.Moshi;
 
 import retrofit2.Call;

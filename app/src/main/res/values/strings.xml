@@ -4,10 +4,12 @@
     <string name="settings_notifications">Notifications</string>
     <string name="settings_help">Help</string>
     <string name="settings_about">About</string>
-    <!-- Fragments -->
-    <string name="top_stories">Top Stories</string>
-    <string name="most_popular">Most Popular</string>
-    <string name="sports">Sports</string>
+    <!-- Menu tabs -->
+    <string name="menu_world">World</string>
+    <string name="menu_popular">Popular</string>
+    <string name="menu_business">Business</string>
+    <string name="menu_sports">Sports</string>
+
     <!-- -->
     <string name="search">Search</string>
     <string name="menu">Menu</string>
@@ -18,4 +20,6 @@
     <string name="nav_header_title">News Reader</string>
     <string name="nav_header_subtitle">Openclassrooms Project</string>
     <string name="nav_header_desc">Navigation header</string>
+
+    <string name="search_msg">Please enter some search term and select at least one checkbox.</string>
 </resources>

@@ -8,7 +8,7 @@ import com.antho.newsreader.db.MostPopularApi;
 
 import com.antho.newsreader.model.AdapterFactory;
 import com.antho.newsreader.model.ZonedDateTimeAdapter;
-import com.antho.newsreader.model.mostpopular.MostPopularNewsList;
+import com.antho.newsreader.model.popular.MostPopularNewsList;
 import com.squareup.moshi.Moshi;
 
 import retrofit2.Call;

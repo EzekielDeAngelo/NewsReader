@@ -8,7 +8,7 @@ import android.util.Log;
 import com.antho.newsreader.db.ArticleSearchApi;
 import com.antho.newsreader.model.AdapterFactory;
 import com.antho.newsreader.model.ZonedDateTimeAdapter;
-import com.antho.newsreader.model.articlesearch.ArticleSearchNewsList;
+import com.antho.newsreader.model.search.ArticleSearchNewsList;
 import com.squareup.moshi.Moshi;
 
 import retrofit2.Call;

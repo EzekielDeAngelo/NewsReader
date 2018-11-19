@@ -17,7 +17,7 @@ import android.view.ViewGroup;
 
 import com.antho.newsreader.R;
 
-import com.antho.newsreader.model.topstories.TopStoriesNewsList;
+import com.antho.newsreader.model.news.TopStoriesNewsList;
 
 import com.antho.newsreader.viewmodel.TopStoriesViewModel;
 

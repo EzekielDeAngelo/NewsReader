@@ -1,59 +1,110 @@
 package com.antho.newsreader.viewmodel;
 /** Search viewmodel **/
+import android.annotation.SuppressLint;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
-import com.antho.newsreader.model.AdapterFactory;
-import com.antho.newsreader.model.ZonedDateTimeAdapter;
-import com.squareup.moshi.Moshi;
+import com.antho.newsreader.db.NewsApi;
+import com.antho.newsreader.db.NewsService;
+import com.antho.newsreader.model.search.Search;
+import com.antho.newsreader.model.search.SearchListResponse;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.moshi.MoshiConverterFactory;
+import java.util.List;
 
+import io.reactivex.Single;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
-import com.antho.newsreader.db.SearchApi;
 /**  **/
 public class SearchViewModel extends ViewModel
 {
-    private MutableLiveData<com.antho.newsreader.model.articlesearch.Response> articleSearchList;
-    // This method is using Retrofit to get the JSON data from URL
-    public LiveData<com.antho.newsreader.model.articlesearch.Response> getNews()
-    {
-        if (articleSearchList == null)
-        {
-            loadNews();
+
+    private final MutableLiveData<List<Search>> searchDocs = new MutableLiveData<>();
+    private final MutableLiveData<Boolean> storiesLoadError = new MutableLiveData<>();
+    private final MutableLiveData<Boolean> loading = new MutableLiveData<>();
+    private Disposable disposable;
+    private NewsService newsService;
+    private String queryText;
+    private String categoryText;
+    private String beginDate;
+    private String endDate;
+
+
+
+    public SearchViewModel() {
+
+    }
+
+    public void setQueryParameters(
+            String queryText,
+            String categoryText,
+            String beginDate,
+            String endDate) {
+
+        makeCallForSearch(
+                queryText,
+                categoryText,
+                beginDate,
+                endDate
+        );
+    }
+
+
+
+
+    public LiveData<List<Search>> getSearchStories() {
+        return searchDocs;
+    }
+
+    public LiveData<Boolean> getError() {
+        return storiesLoadError;
+    }
+
+    public LiveData<Boolean> getLoading() {
+        return loading;
+    }
+
+
+    @SuppressLint("CheckResult")
+    public void makeCallForSearch(
+            String query,
+            String categories,
+            String beginDate,
+            String endDate) {
+
+        Single<SearchListResponse> searchStories = NewsApi.getInstance().getSearchStories(
+                query,
+                categories,
+                beginDate,
+                endDate,
+                "oldest");
+        disposable = searchStories.subscribeOn(Schedulers.io())
+                .subscribe(SearchNewsListResponse -> {
+                    searchDocs.postValue(SearchNewsListResponse.searchNewsList().searchNews());
+                    storiesLoadError.postValue(false);
+                    loading.postValue(false);
+                }, throwable -> {
+                    storiesLoadError.postValue(true);
+                    loading.postValue(false);
+                });
+
+    }
+
+
+
+    @Override
+    protected void onCleared() {
+        if(disposable != null && !disposable.isDisposed()) {
+            disposable.dispose();
+            disposable = null;
         }
-        return articleSearchList;
+        super.onCleared();
     }
-    //
-    private void loadNews()
-    {
-        Moshi moshi = new Moshi.Builder()
-            .add(AdapterFactory.create())
-            .add(new ZonedDateTimeAdapter())
-            .build();
-        Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl(SearchApi.BASE_URL)
-            .addConverterFactory(MoshiConverterFactory.create(moshi))
-            .build();
-        SearchApi api = retrofit.create(SearchApi.class);
-        articleSearchList = new MutableLiveData<com.antho.newsreader.model.articlesearch.Response>();
-        Call<com.antho.newsreader.model.articlesearch.Response> call = api.getArticleSearch();
-        call.enqueue(new Callback<com.antho.newsreader.model.articlesearch.Response>()
-        {
-            @Override
-            public void onResponse(Call<com.antho.newsreader.model.articlesearch.Response> call, Response<com.antho.newsreader.model.articlesearch.Response> response)
-            {
-                articleSearchList.setValue(response.body());
-            }
-            @Override
-            public void onFailure(Call<com.antho.newsreader.model.articlesearch.Response> call, Throwable t)
-            { }
-        });
-    }
+
+
+
+
+
 }
 

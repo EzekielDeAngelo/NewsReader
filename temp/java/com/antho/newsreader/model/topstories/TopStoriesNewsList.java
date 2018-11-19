@@ -1,6 +1,6 @@
-package com.antho.newsreader.model.topstories;
+package com.antho.newsreader.model.news;
 /****/
-import com.antho.newsreader.model.topstories.AutoValue_TopStoriesNewsList;
+import com.antho.newsreader.model.news.AutoValue_TopStoriesNewsList;
 import com.google.auto.value.AutoValue;
 import com.squareup.moshi.Json;
 import com.squareup.moshi.JsonAdapter;

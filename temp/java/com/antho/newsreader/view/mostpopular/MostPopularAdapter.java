@@ -13,8 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.antho.newsreader.R;
-import com.antho.newsreader.model.mostpopular.MostPopularNews;
-import com.antho.newsreader.model.mostpopular.MostPopularNewsList;
+import com.antho.newsreader.model.popular.MostPopularNews;
+import com.antho.newsreader.model.popular.MostPopularNewsList;
 import com.jakewharton.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 

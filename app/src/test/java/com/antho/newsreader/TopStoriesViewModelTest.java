@@ -1,34 +1,16 @@
 package com.antho.newsreader;
 
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.Observer;
-import android.support.annotation.Nullable;
-
-import com.antho.newsreader.model.topstories.TopStoriesNews;
-import com.antho.newsreader.model.topstories.TopStoriesNewsList;
-import com.antho.newsreader.view.fragments.topstories.TopStories;
-import com.antho.newsreader.viewmodel.TopStoriesViewModel;
 import com.bumptech.glide.load.engine.Resource;
-
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.mockito.Mock;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import retrofit2.Response;
 
 import static org.mockito.Mockito.verify;
 
 public class TopStoriesViewModelTest {
-   /* static TopStoriesViewModel sViewModel;
+   /* static NewsViewModel sViewModel;
 
 
     @BeforeClass
     public static void classSetUp() throws Exception {
-        sViewModel = TopStoriesViewModel.getInstance();
+        sViewModel = NewsViewModel.getInstance();
     }
 
     @Before
@@ -37,18 +19,18 @@ public class TopStoriesViewModelTest {
         //sViewModel.getNews("Top Stories").observe();
     }
     @Mock
-    Observer observer = new Observer<TopStoriesNewsList>() {
+    Observer observer = new Observer<NewsList>() {
         @Override
-        public void onChanged(@Nullable TopStoriesNewsList topStoriesNewsList) {
+        public void onChanged(@Nullable NewsList topStoriesNewsList) {
 
         }
     };
     @Test
     void fetchTopStories()
     {
-        TopStoriesNewsList list = new TopStoriesNewsList() {
+        NewsList list = new NewsList() {
             @Override
-            public List<TopStoriesNews> results() {
+            public List<News> results() {
                 return null;
             }
         };
@@ -56,10 +38,10 @@ public class TopStoriesViewModelTest {
         verify(observer).onChanged(list);
     }
 
-    /*private static List<TopStoriesNews> NEWS = Lists.newArrayList(new TopStoriesNews("Title1", "Description1"),
-            new TopStoriesNews("Title2", "Description2"));
+    /*private static List<News> NEWS = Lists.newArrayList(new News("Title1", "Description1"),
+            new News("Title2", "Description2"));
 
-    private static List<TopStoriesNews> EMPTY_NEWS = new ArrayList<>(0);
+    private static List<News> EMPTY_NEWS = new ArrayList<>(0);
 
 
     @Mock

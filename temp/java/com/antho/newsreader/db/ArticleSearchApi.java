@@ -1,7 +1,7 @@
 package com.antho.newsreader.db;
 /****/
 
-import com.antho.newsreader.model.articlesearch.ArticleSearchNewsList;
+import com.antho.newsreader.model.search.ArticleSearchNewsList;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

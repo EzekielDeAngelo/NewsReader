@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_world"
+        android:title="@string/menu_world"
+        android:icon="@drawable/ic_world_news" />
+    <item android:id="@+id/action_popular"
+        android:title="@string/menu_popular"
+        android:icon="@drawable/ic_popular_news" />
+    <item android:id="@+id/action_business"
+        android:title="@string/menu_business"
+        android:icon="@drawable/ic_business_news"/>
+    <item android:id="@+id/action_sports"
+        android:title="@string/menu_sports"
+        android:icon="@drawable/ic_sports_news"/>
+</menu>

@@ -1,8 +1,8 @@
-package com.antho.newsreader.model.topstories;
+package com.antho.newsreader.model.news;
 /****/
 import android.support.annotation.Nullable;
 
-import com.antho.newsreader.model.topstories.AutoValue_TopStoriesNews;
+import com.antho.newsreader.model.news.AutoValue_TopStoriesNews;
 import com.google.auto.value.AutoValue;
 import com.squareup.moshi.Json;
 import com.squareup.moshi.JsonAdapter;

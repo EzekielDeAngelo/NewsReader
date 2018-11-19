@@ -1,8 +1,8 @@
 package com.antho.newsreader.db;
 /****/
 
-import com.antho.newsreader.model.mostpopular.MostPopularNewsList;
-import com.antho.newsreader.model.topstories.TopStoriesNewsList;
+import com.antho.newsreader.model.popular.MostPopularNewsList;
+import com.antho.newsreader.model.news.TopStoriesNewsList;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

@@ -15,7 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.antho.newsreader.R;
-import com.antho.newsreader.model.articlesearch.ArticleSearchNewsList;
+import com.antho.newsreader.model.search.ArticleSearchNewsList;
 import com.antho.newsreader.viewmodel.ArticleSearchViewModel;
 
 

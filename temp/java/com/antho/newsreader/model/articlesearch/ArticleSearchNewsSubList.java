@@ -1,7 +1,7 @@
-package com.antho.newsreader.model.articlesearch;
+package com.antho.newsreader.model.search;
 import android.support.annotation.NonNull;
 
-import com.antho.newsreader.model.articlesearch.AutoValue_ArticleSearchNewsSubList;
+import com.antho.newsreader.model.search.AutoValue_ArticleSearchNewsSubList;
 import com.google.auto.value.AutoValue;
 import com.squareup.moshi.Json;
 import com.squareup.moshi.JsonAdapter;

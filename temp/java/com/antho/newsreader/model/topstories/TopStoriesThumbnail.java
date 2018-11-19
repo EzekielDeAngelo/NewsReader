@@ -1,4 +1,4 @@
-package com.antho.newsreader.model.topstories;
+package com.antho.newsreader.model.news;
 /****/
 import android.support.annotation.Nullable;
 
