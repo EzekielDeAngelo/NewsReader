@@ -1,7 +1,5 @@
 package com.antho.newsreader.view.activities;
-
-
-
+/** Web view activity**/
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.support.annotation.Nullable;
@@ -15,55 +13,59 @@ import android.widget.ProgressBar;
 import com.antho.newsreader.R;
 import com.antho.newsreader.base.BaseActivity;
 
-
 import butterknife.BindView;
-
-public class WebViewActivity extends BaseActivity {
-
+/** Activity to display news article content as a web page **/
+public class WebViewActivity extends BaseActivity
+{
     @BindView(R.id.webview) WebView webView;
     @BindView(R.id.progress_bar) ProgressBar progressBar;
-
-
+    // Load web view with article url
     @Override
-    protected int layoutRes() {
-        return R.layout.webview_layout;
-    }
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-        setTitle("NYT Article");
-
         initWebView();
-        if(getIntent().hasExtra("url")) {
+        if(getIntent().hasExtra("url"))
+        {
+            String section = getIntent().getStringExtra("section");
             String url = getIntent().getStringExtra("url");
+            setTitle(section);
             webView.loadUrl(url);
         }
-
     }
-
+    // Initialize web view
     @SuppressLint("SetJavaScriptEnabled")
-    private void initWebView() {
+    private void initWebView()
+    {
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebChromeClient(new WebChromeClient());
-        webView.setWebViewClient(new WebViewClient() {
-
+        webView.setWebViewClient(new WebViewClient()
+        {
             @Override
-            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            public void onPageStarted(WebView view, String url, Bitmap favicon)
+            {
                 super.onPageStarted(view, url, favicon);
-                if(progressBar != null && progressBar.getVisibility() == View.GONE) {
+                if (progressBar != null && progressBar.getVisibility() == View.GONE)
+                {
                     progressBar.setVisibility(View.VISIBLE);
                 }
             }
 
             @Override
-            public void onPageFinished(WebView view, String url) {
+            public void onPageFinished(WebView view, String url)
+            {
                 super.onPageFinished(view, url);
-                if(progressBar != null && progressBar.getVisibility() == View.VISIBLE) {
+                if (progressBar != null && progressBar.getVisibility() == View.VISIBLE)
+                {
                     progressBar.setVisibility(View.GONE);
                 }
             }
         });
-
+    }
+    // Return activity layout
+    @Override
+    protected int layoutRes()
+    {
+        return R.layout.webview_layout;
     }
 }

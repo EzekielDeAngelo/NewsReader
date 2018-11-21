@@ -20,8 +20,8 @@ public abstract class Popular
     public abstract String date();
     @Nullable
     @Json (name="media")
-    public abstract List<PopularMedia> mediaThumbnail();
-    // Static factory method to access the package
+    public abstract List<PopularMedia> multimedia();
+    // Creates a Moshi adapter for this data
     public static JsonAdapter<Popular> jsonAdapter(Moshi moshi)
     {
         return new AutoValue_Popular.MoshiJsonAdapter(moshi);

@@ -14,98 +14,57 @@ import io.reactivex.Single;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
-
-/**  **/
+/** Viewmodel for most popular API **/
 public class PopularViewModel extends ViewModel
 {
- //   private MutableLiveData<PopularList> popularList;
-    private static PopularViewModel ourInstance = null;
     private MutableLiveData<List<Popular>> popularList = new MutableLiveData<>();
     private final MutableLiveData<Boolean> popularLoadError = new MutableLiveData<>();
     private final MutableLiveData<Boolean> loading = new MutableLiveData<>();
-    private String storiesCategory;
     private Disposable disposable;
-
-    public PopularViewModel() {
+    // Constructor
+    public PopularViewModel()
+    {
         loadPopularStories();
     }
-
-
-    public LiveData<List<Popular>> getPopularStories() {
+    // Return news list from most popular API
+    public LiveData<List<Popular>> getPopularNews() {
         return popularList;
     }
-
+    // Return news loading errors
     public LiveData<Boolean> getError() {
         return popularLoadError;
     }
-
+    // Return loading status
     public LiveData<Boolean> getLoading() {
         return loading;
     }
-
-
-    private void loadPopularStories() {
+    // Load popular news from most popular API
+    private void loadPopularStories()
+    {
         loading.setValue(true);
-
-        Single<PopularList> storyCall = NewsApi.getInstance().getPopularStories();
-        disposable = storyCall.subscribeOn(Schedulers.io())
-                //.observeOn(Schedulers.io())
-                .subscribe(mostPopularNewsList -> {
-                    popularLoadError.postValue(false);
-                    popularList.postValue(mostPopularNewsList.results());
-                    loading.postValue(false);
-                }, throwable -> {
-                    Timber.e(throwable.getLocalizedMessage());
-                    popularLoadError.postValue(true);
-                    loading.postValue(false);
-                });
-
+        Single<PopularList> newsCall = NewsApi.getInstance().getPopularNews();
+        disposable = newsCall.subscribeOn(Schedulers.io())
+           .subscribe(popularNewsList ->
+           {
+               popularLoadError.postValue(false);
+               popularList.postValue(popularNewsList.results());
+               loading.postValue(false);
+           }, throwable ->
+           {
+               Timber.e(throwable.getLocalizedMessage());
+               popularLoadError.postValue(true);
+               loading.postValue(false);
+           });
     }
-
+    // Clear method
     @Override
-    protected void onCleared() {
-        if(disposable != null && !disposable.isDisposed()) {
+    protected void onCleared()
+    {
+        if(disposable != null && !disposable.isDisposed())
+        {
             disposable.dispose();
             disposable = null;
         }
         super.onCleared();
     }
-
-   /*
-    // This method is using Retrofit to get the JSON data from URL
-    public LiveData<PopularList> getNews()
-    {
-        if (mostPopularList == null)
-        {
-            loadNews();
-        }
-        return mostPopularList;
-    }
-    //
-    private void loadNews()
-    {
-        Moshi moshi = new Moshi.Builder()
-                .add(AdapterFactory.create())
-                .add(new ZonedDateTimeAdapter())
-                .build();
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(MostPopularApi.BASE_URL)
-                .addConverterFactory(MoshiConverterFactory.create(moshi))
-                .build();
-        MostPopularApi api = retrofit.create(MostPopularApi.class);
-        mostPopularList = new MutableLiveData<PopularList>();
-        Call<PopularList> call = api.getMostPopular();
-        call.enqueue(new Callback<PopularList>()
-        {
-            @Override
-            public void onResponse(Call<PopularList> call, SearchList<PopularList> response)
-            {
-                mostPopularList.setValue(response.body());
-            }
-            @Override
-            public void onFailure(Call<PopularList> call, Throwable t)
-            {
-            }
-        });
-    }*/
 }

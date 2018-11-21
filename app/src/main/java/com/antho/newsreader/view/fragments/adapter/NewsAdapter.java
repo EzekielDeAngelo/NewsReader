@@ -1,5 +1,5 @@
 package com.antho.newsreader.view.fragments.adapter;
-
+/** News adapter**/
 import android.support.annotation.NonNull;
 import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
@@ -19,98 +19,84 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
-public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
-
+/** Adapter to create and populate recycler view for news from top stories API **/
+public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder>
+{
     private final OnStoryClickedListener listener;
     private final List<News> data = new ArrayList<>();
-
-    public NewsAdapter(OnStoryClickedListener listener) {
+    // Constructor
+    public NewsAdapter (OnStoryClickedListener listener) {
         this.listener = listener;
     }
-
+    // Creates view for recycler view with on click listener parameter
     @NonNull
     @Override
-    public NewsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_layout,
-                parent, false);
+    public NewsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    {
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_layout, parent, false);
         return new NewsViewHolder(itemView, listener);
     }
-
+    // Bind data to the view items
     @Override
-    public void onBindViewHolder(@NonNull NewsViewHolder holder, int position) {
-
+    public void onBindViewHolder(@NonNull NewsViewHolder holder, int position)
+    {
         holder.bind(data.get(position));
     }
-
+    // Return the list size
     @Override
-    public int getItemCount() {
+    public int getItemCount()
+    {
         return data.size();
     }
-
-    public void setData(List<News> stories) {
-        if (stories != null) {
-            DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(new NewsDiffCallback(data,
-                    stories));
+    // Add news list data if available
+    public void setData(List<News> newsList)
+    {
+        if (newsList != null)
+        {
+            DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(new NewsDiffCallback(data, newsList));
             data.clear();
-            data.addAll(stories);
+            data.addAll(newsList);
             diffResult.dispatchUpdatesTo(this);
-        } else {
+        } else
+        {
             data.clear();
             notifyDataSetChanged();
         }
-
     }
-
-    static final class NewsViewHolder extends RecyclerView.ViewHolder {
-
-        @BindView(R.id.thumbnail)
-        ImageView newsImage;
-        @BindView(R.id.section)
-        TextView sectionText;
+    // Provides a reference to the views for each data item
+    static final class NewsViewHolder extends RecyclerView.ViewHolder
+    {
+        @BindView(R.id.thumbnail) ImageView newsImage;
+        @BindView(R.id.section) TextView sectionText;
         @BindView(R.id.date) TextView dateText;
         @BindView(R.id.title) TextView titleText;
-
-        private News story;
-
+        private News news;
+        // Bind view and set on click listener
         NewsViewHolder(View itemView, OnStoryClickedListener listener)
         {
             super(itemView);
             ButterKnife.bind(this, itemView);
-
-            itemView.setOnClickListener(v -> listener.onItemClicked(story.url()));
+            itemView.setOnClickListener(v -> listener.onItemClicked(news.url(), news.section()));
         }
-
-        void bind(News story)
+        // Bind data entries to appropriate view items
+        void bind(News news)
         {
-            this.story = story;
-            titleText.setText(story.title());
+            this.news = news;
+            titleText.setText(news.title());
             //dateText.setText(Utilities.getDateFromStory(story));
-            sectionText.setText(story.section());
-            // Use Glide to load image
-            if (story.thumbnail().size() > 0 )
+            sectionText.setText(news.section());
+            if (news.multimedia().size() > 0 )
             {
                 Picasso.Builder builder = new Picasso.Builder(newsImage.getContext());
                 builder.downloader(new OkHttp3Downloader(newsImage.getContext()));
-                builder.build().load(story.thumbnail().get(0).thumbnailUrl())
+                builder.build().load(news.multimedia().get(0).thumbnailUrl())
                         .into(newsImage);
             }
-  /*          RequestOptions options = new RequestOptions()
-                    .centerCrop()
-                    .placeholder(R.drawable.ic_paper)
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .priority(Priority.NORMAL);
-            Glide.with(newsImage.getContext())
-                    .load(Utilities.getImageUrl(story))
-                    .apply(options)
-                    .into(newsImage);*/
         }
-
     }
-
+    // On click listener with url and section as parameters to display news in webview
     public interface OnStoryClickedListener
     {
-        void onItemClicked(String url);
+        void onItemClicked(String url, String section);
     }
 }

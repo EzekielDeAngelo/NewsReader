@@ -8,7 +8,7 @@ import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
 
 import org.threeten.bp.ZonedDateTime;
-//import java.time.ZonedDateTime;
+
 import java.util.List;
 /** Data model for news objects in top stories API **/
 @AutoValue
@@ -28,8 +28,8 @@ public abstract class News
     public abstract ZonedDateTime date();
     @Nullable
     @Json (name="multimedia")
-    public abstract List<NewsThumbnail> thumbnail();
-    // Static factory method to access the package
+    public abstract List<NewsThumbnail> multimedia();
+    // Creates a Moshi adapter for this data
     public static JsonAdapter<News> jsonAdapter(Moshi moshi)
     {
         return new AutoValue_News.MoshiJsonAdapter(moshi);

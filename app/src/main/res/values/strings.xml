@@ -5,21 +5,14 @@
     <string name="settings_help">Help</string>
     <string name="settings_about">About</string>
     <!-- Menu tabs -->
-    <string name="menu_world">World</string>
-    <string name="menu_popular">Popular</string>
-    <string name="menu_business">Business</string>
-    <string name="menu_sports">Sports</string>
-
-    <!-- -->
+    <string name="world">World</string>
+    <string name="popular">Popular</string>
+    <string name="business">Business</string>
+    <string name="sports">Sports</string>
+    <!-- Action bar -->
     <string name="search">Search</string>
     <string name="menu">Menu</string>
-    <!-- Navigation drawer -->
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <!-- Navigation drawer header -->
-    <string name="nav_header_title">News Reader</string>
-    <string name="nav_header_subtitle">Openclassrooms Project</string>
-    <string name="nav_header_desc">Navigation header</string>
-
+    <!-- Error messages -->
     <string name="search_msg">Please enter some search term and select at least one checkbox.</string>
+    <string name="api_loading_error">Failed to download news from NYTimes API. Please try again later.</string>
 </resources>

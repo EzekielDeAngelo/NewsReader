@@ -6,7 +6,6 @@ import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
 import com.antho.newsreader.db.NewsApi;
-import com.antho.newsreader.db.NewsService;
 import com.antho.newsreader.model.search.Search;
 import com.antho.newsreader.model.search.SearchListResponse;
 
@@ -15,96 +14,59 @@ import java.util.List;
 import io.reactivex.Single;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
-
-/**  **/
+/** View model for article search API **/
 public class SearchViewModel extends ViewModel
 {
-
-    private final MutableLiveData<List<Search>> searchDocs = new MutableLiveData<>();
-    private final MutableLiveData<Boolean> storiesLoadError = new MutableLiveData<>();
+    private final MutableLiveData<List<Search>> searchList = new MutableLiveData<>();
+    private final MutableLiveData<Boolean> newsLoadError = new MutableLiveData<>();
     private final MutableLiveData<Boolean> loading = new MutableLiveData<>();
     private Disposable disposable;
-    private NewsService newsService;
-    private String queryText;
-    private String categoryText;
-    private String beginDate;
-    private String endDate;
-
-
-
-    public SearchViewModel() {
-
+    // Constructor
+    public SearchViewModel() {}
+    // Call for article search news based on query parameters
+    public void setQueryParameters(String queryText, String categoryText, String beginDate, String endDate)
+    {
+        makeCallForSearch(queryText, categoryText, beginDate, endDate);
     }
-
-    public void setQueryParameters(
-            String queryText,
-            String categoryText,
-            String beginDate,
-            String endDate) {
-
-        makeCallForSearch(
-                queryText,
-                categoryText,
-                beginDate,
-                endDate
-        );
+    // Return news list from article search API based on query parameters
+    public LiveData<List<Search>> getSearchNews() {
+        return searchList;
     }
-
-
-
-
-    public LiveData<List<Search>> getSearchStories() {
-        return searchDocs;
-    }
-
+    // Return news loading errors
     public LiveData<Boolean> getError() {
-        return storiesLoadError;
+        return newsLoadError;
     }
-
+    // Return loading status
     public LiveData<Boolean> getLoading() {
         return loading;
     }
-
-
+    // Search for news based on query parameters
     @SuppressLint("CheckResult")
-    public void makeCallForSearch(
-            String query,
-            String categories,
-            String beginDate,
-            String endDate) {
-
-        Single<SearchListResponse> searchStories = NewsApi.getInstance().getSearchStories(
-                query,
-                categories,
-                beginDate,
-                endDate,
-                "oldest");
-        disposable = searchStories.subscribeOn(Schedulers.io())
-                .subscribe(SearchNewsListResponse -> {
-                    searchDocs.postValue(SearchNewsListResponse.searchNewsList().searchNews());
-                    storiesLoadError.postValue(false);
-                    loading.postValue(false);
-                }, throwable -> {
-                    storiesLoadError.postValue(true);
-                    loading.postValue(false);
-                });
-
+    public void makeCallForSearch(String query, String categories, String beginDate, String endDate)
+    {
+        Single<SearchListResponse> newsCall = NewsApi.getInstance().getSearchNews(query, categories, beginDate, endDate,"oldest");
+        disposable = newsCall.subscribeOn(Schedulers.io())
+            .subscribe(SearchNewsListResponse ->
+            {
+               searchList.postValue(SearchNewsListResponse.searchNewsList().searchNews());
+               newsLoadError.postValue(false);
+               loading.postValue(false);
+            }, throwable ->
+            {
+               newsLoadError.postValue(true);
+               loading.postValue(false);
+            });
     }
-
-
-
+    // Clear method
     @Override
-    protected void onCleared() {
-        if(disposable != null && !disposable.isDisposed()) {
+    protected void onCleared()
+    {
+        if (disposable != null && !disposable.isDisposed())
+        {
             disposable.dispose();
             disposable = null;
         }
         super.onCleared();
     }
-
-
-
-
-
 }
 

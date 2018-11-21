@@ -1,5 +1,5 @@
 package com.antho.newsreader.view.fragments;
-
+/** Business fragment**/
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,85 +16,58 @@ import com.antho.newsreader.viewmodel.NewsViewModel;
 import com.antho.newsreader.viewmodel.factory.ViewModelFactory;
 
 import butterknife.BindView;
-
+/** Creates fragment to display news from top stories/business API **/
 public class BusinessFragment extends BaseFragment
 {
-    @BindView(R.id.recyclerview_top_stories)
-    RecyclerView newsList;
-    @BindView(R.id.loading_indicator)
-    View loadingView;
-    @BindView(R.id.tv_error)
-    TextView errorText;
-
+    @BindView(R.id.fragment_news_recyclerview) RecyclerView newsList;
+    @BindView(R.id.loading_indicator) View loadingView;
+    @BindView(R.id.tv_error) TextView errorText;
     private NewsViewModel viewModel;
-    RecyclerView recyclerView;
-    // Required empty public constructor
-    public BusinessFragment()
-    {
-    }
-    // Inflate the layout for this fragment
-    /*@Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-    {
-        return inflater.inflate(R.layout.fragment_sports, container, false);
-    }*/
-    //
-    public static BusinessFragment newInstance() {
-        return new BusinessFragment();
-    }
+    private static final String BUSINESS_NEWS_TAG = "BUSINESS_NEWS_TAG";
+    // Constructor
+    public BusinessFragment() {}
+    // Return new instance of business fragment
+    public static BusinessFragment newInstance() { return new BusinessFragment(); }
+    // Set viewmodel and adapter for business fragment
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState)
     {
         super.onViewCreated(view, savedInstanceState);
-        viewModel = ViewModelProviders.of(this, new ViewModelFactory("business")).get(NewsViewModel.class);
+        viewModel = ViewModelProviders.of(this, new ViewModelFactory(BUSINESS_NEWS_TAG)).get(NewsViewModel.class);
         newsList.addItemDecoration(new DividerItemDecoration(view.getContext(), DividerItemDecoration.VERTICAL));
         newsList.setLayoutManager(new LinearLayoutManager(view.getContext()));
         newsList.setAdapter(new NewsAdapter(((NewsAdapter.OnStoryClickedListener) getActivity())));
         observeViewModel();
-
-        /*LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview_sports);
-        recyclerView.setLayoutManager(layoutManager);
-        //recyclerView.setHasFixedSize(true);
-        NewsViewModel model = ViewModelProviders.of(this).get(NewsViewModel.class);*/
-       /* model.getNews("SportsFragment").observe(this, new Observer<NewsList>()
-        {
-            @Override
-            public void onChanged(@Nullable NewsList newsList)
-            {
-                TopStoriesAdapter adapter = new TopStoriesAdapter(getContext(), newsList);
-                recyclerView.setAdapter(adapter);
-            }
-        });*/
     }
+    // Observe viewmodel to update loading status, news and show errors
     @SuppressWarnings("ConstantConditions")
-    private void observeViewModel() {
-
-        viewModel.getLoading().observe(this, isLoading -> {
+    private void observeViewModel()
+    {
+        viewModel.getLoading().observe(this, isLoading ->
+        {
             loadingView.setVisibility(isLoading ? View.VISIBLE : View.GONE);
             newsList.setVisibility(isLoading ? View.GONE : View.VISIBLE);
             errorText.setVisibility(isLoading ? View.GONE : errorText.getVisibility());
         });
-
-        viewModel.getError().observe(this, isError -> {
-            if(isError) {
+        viewModel.getError().observe(this, isError ->
+        {
+            if(isError)
+            {
                 errorText.setVisibility(View.VISIBLE);
                 newsList.setVisibility(View.GONE);
-                errorText.setText("POUIIIN");
-            } else {
+                errorText.setText(R.string.api_loading_error);
+            } else
+            {
                 errorText.setVisibility(View.GONE);
                 errorText.setText(null);
             }
         });
-
-        viewModel.getSportsStories().observe(this, stories -> {
+        viewModel.getNews().observe(this, stories ->
+        {
             NewsAdapter adapter = (NewsAdapter) newsList.getAdapter();
             adapter.setData(stories);
         });
     }
-
-
+    // Return fragment layout
     @Override
-    public int layoutRes() {
-        return R.layout.fragment_top_stories;
-    }
+    public int layoutRes() { return R.layout.fragment_news; }
 }

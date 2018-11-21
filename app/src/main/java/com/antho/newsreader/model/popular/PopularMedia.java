@@ -12,11 +12,10 @@ import java.util.List;
 @AutoValue
 public abstract class PopularMedia
 {
-    // Thumbnail Url located in media-metadata from PopularFragment API
     @Nullable
     @Json (name="media-metadata")
-    public abstract List<PopularThumbnail> mediaThumbnailList();
-    // Static factory method to access the package
+    public abstract List<PopularThumbnail> media();
+    // Creates a Moshi adapter for this data
     public static JsonAdapter<PopularMedia> jsonAdapter(Moshi moshi)
     {
         return new AutoValue_PopularMedia.MoshiJsonAdapter(moshi);

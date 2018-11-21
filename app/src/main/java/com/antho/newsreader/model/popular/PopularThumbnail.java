@@ -13,7 +13,7 @@ public abstract class PopularThumbnail
     @Nullable
     @Json(name="url")
     public abstract  String thumbnailUrl();
-    // Static factory method to access the package
+    // Creates a Moshi adapter for this data
     public static JsonAdapter<PopularThumbnail> jsonAdapter(Moshi moshi)
     {
         return new AutoValue_PopularThumbnail.MoshiJsonAdapter(moshi);

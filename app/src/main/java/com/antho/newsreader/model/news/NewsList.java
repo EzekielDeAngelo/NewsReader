@@ -12,7 +12,7 @@ public abstract class NewsList
 {
     @Json(name="results")
     public abstract List<News> results();
-    // Static factory method to access the package
+    // Creates a Moshi adapter for this data
     public static JsonAdapter<NewsList> jsonAdapter(Moshi moshi)
     {
         return new AutoValue_NewsList.MoshiJsonAdapter(moshi);

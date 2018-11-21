@@ -1,5 +1,5 @@
 package com.antho.newsreader.model.popular;
-/**Most popular news list **/
+/** Most popular news list **/
 import com.google.auto.value.AutoValue;
 import com.squareup.moshi.Json;
 import com.squareup.moshi.JsonAdapter;
@@ -12,7 +12,7 @@ public abstract class PopularList
 {
     @Json(name="results")
     public abstract List<Popular> results();
-    // Static factory method to access the package
+    // Creates a Moshi adapter for this data
     public static JsonAdapter<PopularList> jsonAdapter(Moshi moshi)
     {
         return new AutoValue_PopularList.MoshiJsonAdapter(moshi);
