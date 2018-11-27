@@ -15,4 +15,7 @@
     <!-- Error messages -->
     <string name="search_msg">Please enter some search term and select at least one checkbox.</string>
     <string name="api_loading_error">Failed to download news from NYTimes API. Please try again later.</string>
+    <!-- Notifications -->
+    <string name="channel_name">new_channel_1</string>
+    <string name="channel_description">desc</string>
 </resources>

@@ -7,6 +7,8 @@ import com.squareup.moshi.Json;
 import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
 
+import org.threeten.bp.ZonedDateTime;
+
 import java.util.List;
 /** Data model for news objects in most popular API **/
 @AutoValue

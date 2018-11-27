@@ -1,6 +1,9 @@
 package com.antho.newsreader.view.activities;
 /** Main activity **/
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -12,6 +15,7 @@ import android.view.MenuItem;
 import com.antho.newsreader.R;
 import com.antho.newsreader.base.BaseActivity;
 import com.antho.newsreader.view.activities.notifications.NotificationsActivity;
+import com.antho.newsreader.view.activities.notifications.handlers.NotificationUtil;
 import com.antho.newsreader.view.activities.search.SearchActivity;
 import com.antho.newsreader.view.fragments.BusinessFragment;
 import com.antho.newsreader.view.fragments.PopularFragment;
@@ -30,6 +34,7 @@ public class MainActivity extends BaseActivity implements NewsAdapter.OnStoryCli
     private static final String POPULAR_NEWS_TAG = "TRENDING_NEWS_TAG";
     private static final String BUSINESS_NEWS_TAG = "BUSINESS_NEWS_TAG ";
     private static final String SPORTS_NEWS_TAG = "SPORTS_NEWS_TAG";
+    public static String NOTIFICATION_CHANNEL_ID;
     private FragmentManager fragmentManager;
     // Loads first fragment, set fragment manager and bottom navigation
     @Override
@@ -40,6 +45,7 @@ public class MainActivity extends BaseActivity implements NewsAdapter.OnStoryCli
         int selectedIndex = savedInstanceState == null ? 0 : savedInstanceState.getInt(SELECTED_INDEX_KEY);
         loadFirstFragment(selectedIndex);
         setUpBottomNavigation();
+        NOTIFICATION_CHANNEL_ID = NotificationUtil.createNotificationChannel(this);
     }
     // Loads fragment based on index given as parameter
     private void loadFirstFragment(int selectedIndex)
@@ -170,6 +176,7 @@ public class MainActivity extends BaseActivity implements NewsAdapter.OnStoryCli
                 return super.onOptionsItemSelected(item);
         }
     }
+
     // On click listener with url and section as parameters to display news in webview
     @Override
     public void onItemClicked(String url, String section)

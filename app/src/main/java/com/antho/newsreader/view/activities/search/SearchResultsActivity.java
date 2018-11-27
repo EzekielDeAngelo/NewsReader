@@ -7,11 +7,13 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import com.antho.newsreader.R;
 import com.antho.newsreader.base.BaseActivity;
+import com.antho.newsreader.view.activities.MainActivity;
 import com.antho.newsreader.view.activities.WebViewActivity;
 import com.antho.newsreader.view.activities.search.adapter.SearchResultsAdapter;
 import com.antho.newsreader.viewmodel.SearchViewModel;
@@ -32,6 +34,7 @@ public class SearchResultsActivity  extends BaseActivity implements SearchResult
         Bundle bundle = getIntent().getExtras();
         if (bundle != null)
         {
+            setTitle("Search results");
             String queryText = bundle.getString("query");
             String categoriesText = bundle.getString("categories");
             String beginDate = bundle.getString("begin");
@@ -56,11 +59,11 @@ public class SearchResultsActivity  extends BaseActivity implements SearchResult
         });
         viewModel.getError().observe(this, isError ->
         {
-            if(isError)
+            if (isError)
             {
                 errorText.setVisibility(View.VISIBLE);
                 newsList.setVisibility(View.GONE);
-                errorText.setText("PRUUUUT");
+                errorText.setText(R.string.api_loading_error);
             } else
             {
                 errorText.setVisibility(View.GONE);
@@ -75,10 +78,11 @@ public class SearchResultsActivity  extends BaseActivity implements SearchResult
     }
     // On click listener with url and section as parameters to display news in webview
     @Override
-    public void onItemClicked(String url, String section)
+    public void onItemClicked (String url, String section)
     {
         Intent intent = new Intent(SearchResultsActivity.this, WebViewActivity.class);
-        intent.putExtra("article_url", url);
+        intent.putExtra("url", url);
+        intent.putExtra("section", section);
         startActivity(intent);
     }
     // Return activity layout

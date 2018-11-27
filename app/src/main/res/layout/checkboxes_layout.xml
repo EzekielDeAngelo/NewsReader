@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <CheckBox
+        android:id="@+id/sportsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Sports"
+        app:layout_constraintEnd_toEndOf="@+id/politicsCheckBox"
+        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintStart_toStartOf="@+id/politicsCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/politicsCheckBox" />
+    <CheckBox
+        android:id="@+id/travelCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Travel"
+        app:layout_constraintEnd_toEndOf="@+id/sportsCheckBox"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/sportsCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/sportsCheckBox" />
+    <CheckBox
+        android:id="@+id/entrepreneursCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_marginTop="8dp"
+        android:text="Entrepreneurs"
+        app:layout_constraintStart_toStartOf="@+id/businessCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/businessCheckBox" />
+    <CheckBox
+        android:id="@+id/businessCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Business"
+        app:layout_constraintStart_toStartOf="@+id/artsCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/artsCheckBox" />
+    <CheckBox
+        android:id="@+id/artsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginStart="8dp"
+        android:text="Arts"
+        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <CheckBox
+        android:id="@+id/politicsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginStart="24dp"
+        android:text="Politics"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+</android.support.constraint.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.antho.newsreader.view.activities.search.adapter;
 import android.support.annotation.NonNull;
 import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,8 @@ import com.antho.newsreader.R;
 import com.antho.newsreader.model.search.Search;
 import com.jakewharton.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
+
+import org.threeten.bp.format.DateTimeFormatter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,10 +28,7 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdap
     private final OnStoryClickedListener listener;
     private final List<Search> data = new ArrayList<>();
     // Constructor
-    public SearchResultsAdapter(OnStoryClickedListener listener)
-    {
-        this.listener = listener;
-    }
+    public SearchResultsAdapter(OnStoryClickedListener listener) { this.listener = listener; }
     //  Creates view for recycler view with on click listener parameter
     @NonNull
     @Override
@@ -88,7 +88,7 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdap
         {
             this.search = search;
             titleText.setText(search.headline().title());
-            //dateText.setText(Utilities.getDateFromSearchDocument(searchDocument));
+            dateText.setText(search.date().split("T")[0]);
             sectionText.setText(search.section());
             if (search.multimedia().size() > 0)
             {

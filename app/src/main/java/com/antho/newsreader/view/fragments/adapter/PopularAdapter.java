@@ -16,6 +16,9 @@ import com.antho.newsreader.viewmodel.PopularViewModel;
 import com.jakewharton.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 
+import org.threeten.bp.ZonedDateTime;
+import org.threeten.bp.format.DateTimeFormatter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -88,7 +91,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.PopularV
         {
             this.popular = popular;
             titleText.setText(popular.title());
-            //dateText.setText(Utilities.getDateFromPopularStory(popularStory));
+            dateText.setText(popular.date().substring(8) + popular.date().substring(4, 7));
             sectionText.setText(popular.section());
             if (popular.multimedia().size() > 0 )
             {

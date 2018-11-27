@@ -32,5 +32,9 @@
             />
         <activity android:name=".view.activities.search.SearchResultsActivity"></activity>
         <activity android:name=".view.activities.WebViewActivity" />
+        <service android:name=".view.activities.notifications.handlers.NotificationJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+          />
+
     </application>
 </manifest>

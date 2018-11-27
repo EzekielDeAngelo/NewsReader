@@ -46,6 +46,7 @@ public class SearchActivity extends BaseActivity implements DatePickerDialog.OnD
     protected void onCreate(@Nullable Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
         searchSubjectCheckBoxes = new ArrayList<>();
         searchSubjectCheckBoxes.add(artsCheckBox);
         searchSubjectCheckBoxes.add(businessCheckBox);
@@ -120,7 +121,7 @@ public class SearchActivity extends BaseActivity implements DatePickerDialog.OnD
         }
         else
         {
-            toDate.setText(String.format(Locale.US, "%d/%d/%d", dayOfMonth, month + 1, year));
+            toDate.setText(String.format(Locale.getDefault(), "%d/%d/%d", dayOfMonth, month + 1, year));
             endDate = String.format(Locale.getDefault(), "%d%02d%02d", year, month + 1, dayOfMonth);
         }
     }

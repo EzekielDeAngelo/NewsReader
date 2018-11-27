@@ -14,6 +14,9 @@ import com.antho.newsreader.model.news.News;
 import com.jakewharton.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 
+import org.threeten.bp.ZonedDateTime;
+import org.threeten.bp.format.DateTimeFormatter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,8 +85,9 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         void bind(News news)
         {
             this.news = news;
+
             titleText.setText(news.title());
-            //dateText.setText(Utilities.getDateFromStory(story));
+            dateText.setText(DateTimeFormatter.ofPattern("dd-MM").format(news.date()));
             sectionText.setText(news.section());
             if (news.multimedia().size() > 0 )
             {
