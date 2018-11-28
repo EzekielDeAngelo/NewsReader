@@ -24,7 +24,7 @@ jobs:
 
 #      - run:
 
-#         name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
+#         name: Chmod permissions #if permission for Gradlew Dependencies fail, use this. 
 
 #         command: sudo chmod +x ./gradlew
 
@@ -32,9 +32,8 @@ jobs:
 
           name: Download Dependencies
 
-       
+          command: sudo chmod +x ./gradlew
 
-        command: sudo chmod +x ./gradlew
       - save_cache:
 
           paths:
