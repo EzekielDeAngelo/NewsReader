@@ -22,7 +22,9 @@ android {
     }
     dexOptions { jumboMode = true }
 }
-
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.0'
+}
 dependencies
 {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
