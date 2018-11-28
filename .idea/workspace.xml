@@ -16,9 +16,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ec61835-af18-43ce-8923-2d9140193f22" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
-    </list>
+    <list default="true" id="1ec61835-af18-43ce-8923-2d9140193f22" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,15 +38,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="NotificationsActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/antho/newsreader/view/activities/notifications/NotificationsActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="NotificationsActivityTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/com/antho/newsreader/view/activities/notifications/NotificationsActivityTest.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -112,8 +101,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="986">
+              <caret line="58" column="38" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
             <state />
           </provider>
@@ -2336,6 +2341,7 @@
         <option value="$PROJECT_DIR$/app/src/test/java/com/antho/newsreader/viewmodel/SearchViewModelTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/antho/newsreader/circleci/config.yml" />
         <option value="$PROJECT_DIR$/circle.yml" />
+        <option value="$PROJECT_DIR$/.circleci/config.yml" />
       </list>
     </option>
   </component>
@@ -2346,7 +2352,7 @@
     <option name="height" value="1096" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -2581,14 +2587,14 @@
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32985386" />
+      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32985386" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32985386" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Logcat" order="7" weight="0.32985386" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24972437" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24972437" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32985386" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -2610,20 +2616,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/antho/newsreader/view/activities/notifications/handlers/BigTextIntentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/antho/newsreader/view/activities/notifications/handlers/NotificationUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/antho/newsreader/view/activities/notifications/handlers/NotificationJobService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
@@ -2925,6 +2917,18 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="58" column="38" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state />
       </provider>
