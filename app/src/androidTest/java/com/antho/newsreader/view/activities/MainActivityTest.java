@@ -1,13 +1,19 @@
 package com.antho.newsreader.view.activities;
 
+import android.view.View;
+
+import com.antho.newsreader.R;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class MainActivityTest {
-
+    private MainActivity mainActivity = null;
     @Test
     public void onCreate() {
+        View view = mainActivity.findViewById(R.id.fragment_frame);
+        assertNotNull(view);
     }
 
     @Test
