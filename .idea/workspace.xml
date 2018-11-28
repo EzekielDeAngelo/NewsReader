@@ -16,29 +16,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ec61835-af18-43ce-8923-2d9140193f22" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/antho/newsreader/view/activities/MainActivityTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/antho/newsreader/view/activities/WebViewActivityTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/antho/newsreader/view/activities/notifications/NotificationsActivityTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/antho/newsreader/view/activities/search/SearchActivityTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/antho/newsreader/view/activities/search/SearchResultsActivityTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/antho/newsreader/view/fragments/BusinessFragmentTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/antho/newsreader/view/fragments/PopularFragmentTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/antho/newsreader/view/fragments/SportsFragmentTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/antho/newsreader/view/fragments/WorldFragmentTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/antho/newsreader/circleci/config.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/antho/newsreader/viewmodel/NewsViewModelTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/antho/newsreader/viewmodel/PopularViewModelTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/antho/newsreader/viewmodel/SearchViewModelTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/antho/newsreader/MainActivityTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/antho/newsreader/NotificationsActivityTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/antho/newsreader/SearchActivityTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/antho/newsreader/MostPopularViewModelTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/antho/newsreader/SearchViewModelTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/antho/newsreader/TopStoriesViewModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/antho/newsreader/TopStoriesViewModelTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="1ec61835-af18-43ce-8923-2d9140193f22" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -123,19 +101,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchViewModelTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SearchViewModelTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/test/java/com/antho/newsreader/viewmodel/SearchViewModelTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="476">
               <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/antho/newsreader/circleci/config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state />
           </provider>
         </entry>
       </file>
@@ -2354,6 +2325,7 @@
         <option value="$PROJECT_DIR$/app/src/test/java/com/antho/newsreader/viewmodel/NewsViewModelTest.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/com/antho/newsreader/viewmodel/PopularViewModelTest.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/com/antho/newsreader/viewmodel/SearchViewModelTest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/antho/newsreader/circleci/config.yml" />
       </list>
     </option>
   </component>
@@ -2621,7 +2593,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1874" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -2966,16 +2937,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/java/com/antho/newsreader/MostPopularViewModelTest.java" />
     <entry file="file://$PROJECT_DIR$/app/src/test/java/com/antho/newsreader/SearchViewModelTest.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/antho/newsreader/circleci/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/java/com/antho/newsreader/viewmodel/SearchViewModelTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/antho/newsreader/circleci/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
       </provider>
     </entry>
   </component>
