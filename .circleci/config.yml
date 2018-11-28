@@ -1,93 +1,40 @@
-#
+version: 2
+jobs:
+  one:
+    docker:
+      - image: circleci/ruby:2.4.1
+    steps:
+      - checkout
+      - run: echo "A first hello"
+      - run: mkdir -p my_workspace
+      - run: echo "Trying out workspaces" > my_workspace/echo-output
+      - persist_to_workspace:
+          # Must be an absolute path, or relative path from working_directory
+          root: my_workspace
+          # Must be relative path from root
+          paths:
+            - echo-output      
+  two:
+    docker:
+      - image: circleci/ruby:2.4.1
+    steps:
+      - checkout
+      - run: echo "A more familiar hi"  
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: my_workspace
 
-# Build configuration for Circle CI
-
-#
-
-# See this thread for speeding up and caching directories:
-
-# https://discuss.circleci.com/t/installing-android-build-tools-23-0-2/924
-
-#
-
-
-
-general:
-
-    artifacts:
-
-        - /home/ubuntu/AndroidCI/app/build/outputs/apk/
-
-
-
-machine:
-
-    environment:
-
-        ANDROID_HOME: /usr/local/android-sdk-linux
-
-        ADB_INSTALL_TIMEOUT: 60
-
-        GRADLE_OPTS: '-Dorg.gradle.jvmargs="-Xmx3072M -XX:+HeapDumpOnOutOfMemoryError"'
-
-    java:
-
-        version: oraclejdk8
-
-
-
-dependencies:
-
-    pre:
-
-        - touch app/google-services.json
-
-        - echo $GOOGLE_SERVICES_JSON > app/google-services.json
-
-        - echo y | android update sdk --no-ui --all --filter "tools,android-24,build-tools-24.0.0,platform-tools,extra-android-m2repository,extra-android-support,extra-google-m2repository,extra-google-google_play_services"
-
-    cache_directories:
-
-        - /usr/local/android-sdk-linux/tools
-
-        - /usr/local/android-sdk-linux/build-tools/24.0.0
-
-
-
-# Comment the test stuff out (or remove it) if you don't need it.
-
-test:
-
-  pre:
-
-    - emulator -avd circleci-android22 -no-audio -no-window:
-
-          background: true
-
-          parallel: true
-
-    - circle-android wait-for-boot
-
-    # unlock emulator
-
-    - sleep 30
-
-    - adb shell input keyevent 82
-
-
-
-  override:
-
-#    - ./gradlew clean assemble
-
-    # This will run the tests:
-
-   - ./gradlew assemble connectedDebugAndroidTest -PdisablePreDex --console=plain --info
-
-
-
-  post:
-
-      - cp -r app/build/outputs $CIRCLE_ARTIFACTS
-
-      - cp -r app/build/outputs/androidTest-results/connected/ $CIRCLE_TEST_REPORTS
+      - run: |
+          if [[ $(cat my_workspace/echo-output) == "Trying out workspaces" ]]; then
+            echo "It worked!";
+          else
+            echo "Nope!"; exit 1
+          fi
+workflows:
+  version: 2
+  one_and_two:
+    jobs:
+      - one
+      - two:
+          requires:
+            - one
