@@ -1,20 +1,12 @@
-package com.antho.newsreader;
+package com.antho.newsreader.view.activities.notifications;
 
-import android.support.test.rule.ActivityTestRule;
-import android.view.View;
-
-import com.antho.newsreader.view.activities.notifications.NotificationsActivity;
-
-import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
-public class NotificationsActivityTest
-{
+public class NotificationsActivityTest {
 
-    @Rule
+ /*    @Rule
     public ActivityTestRule<NotificationsActivity> notificationsActivityActivityTestRule = new ActivityTestRule<>(NotificationsActivity.class);
 
     private NotificationsActivity notificationsActivity = null;
@@ -30,4 +22,6 @@ public class NotificationsActivityTest
         View view = notificationsActivity.findViewById(R.id.editText);
         assertNotNull(view);
     }
+}
+*/
 }

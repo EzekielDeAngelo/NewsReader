@@ -1,18 +1,24 @@
-package com.antho.newsreader;
+package com.antho.newsreader.view.activities.search;
 
-import android.support.test.rule.ActivityTestRule;
-import android.view.View;
-
-import com.antho.newsreader.view.activities.search.SearchActivity;
-
-import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
-public class SearchActivityTest
-{
+public class SearchActivityTest {
+
+    @Test
+    public void onCreate() {
+    }
+
+    @Test
+    public void onDateSet() {
+    }
+
+    @Test
+    public void layoutRes() {
+    }
+}
+/*
     @Rule
     public ActivityTestRule<SearchActivity> notificationsActivityActivityTestRule = new ActivityTestRule<>(SearchActivity.class);
 
@@ -30,3 +36,5 @@ public class SearchActivityTest
         assertNotNull(view);
     }
 }
+
+ */
