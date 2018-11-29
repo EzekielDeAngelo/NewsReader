@@ -19,7 +19,7 @@ public class NewsViewModel extends ViewModel
 {
     private MutableLiveData<List<News>> newsList = new MutableLiveData<>();
     private final MutableLiveData<Boolean> topStoriesLoadError = new MutableLiveData<>();
-    private final MutableLiveData<Boolean> loading = new MutableLiveData<>();
+    public final MutableLiveData<Boolean> loading = new MutableLiveData<>();
     private Disposable disposable;
     private String newsCategory;
     private static final String BUSINESS_NEWS_TAG = "BUSINESS_NEWS_TAG";

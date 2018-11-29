@@ -4,12 +4,9 @@ import android.app.job.JobInfo;
 import android.app.job.JobScheduler;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.ComponentName;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
-import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -18,16 +15,11 @@ import android.widget.Switch;
 import com.antho.newsreader.R;
 import com.antho.newsreader.base.BaseActivity;
 import com.antho.newsreader.view.activities.notifications.handlers.NotificationJobService;
-import com.antho.newsreader.view.activities.search.SearchResultsActivity;
-import com.antho.newsreader.view.activities.search.adapter.SearchResultsAdapter;
 import com.antho.newsreader.viewmodel.SearchViewModel;
 
 import org.threeten.bp.ZonedDateTime;
-import org.threeten.bp.format.DateTimeFormatter;
 
-import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Locale;
 
 import butterknife.BindView;
@@ -40,7 +32,7 @@ public class NotificationsActivity extends BaseActivity
     @BindView(R.id.politicsCheckBox) CheckBox politicsCheckBox;
     @BindView(R.id.sportsCheckBox) CheckBox sportsCheckBox;
     @BindView(R.id.travelCheckBox) CheckBox travelCheckBox;
-    @BindView(R.id.notificationSearchTerm) EditText searchTermText;
+    @BindView(R.id.searchTerm) EditText searchTermText;
     @BindView(R.id.sortSwitch) Switch sortSwitch;
     @BindView(R.id.progressBar) ProgressBar progressBar;
     ArrayList<CheckBox> notificationsSubjectCheckBoxes;

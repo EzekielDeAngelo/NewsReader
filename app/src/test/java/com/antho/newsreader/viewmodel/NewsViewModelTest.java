@@ -1,24 +1,14 @@
 package com.antho.newsreader.viewmodel;
 
-import org.junit.Test;
+import org.junit.Before;
 
-import static org.junit.Assert.*;
+public class NewsViewModelTest
+{
+    private NewsViewModel newsViewModel;
 
-public class NewsViewModelTest {
-
-    @Test
-    public void getNews() {
-    }
-
-    @Test
-    public void getError() {
-    }
-
-    @Test
-    public void getLoading() {
-    }
-
-    @Test
-    public void onCleared() {
+    @Before
+    public void setUp() throws Exception
+    {
+        newsViewModel = new NewsViewModel("");
     }
 }

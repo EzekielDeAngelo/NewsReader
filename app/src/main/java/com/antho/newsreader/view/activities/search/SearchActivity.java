@@ -33,7 +33,7 @@ public class SearchActivity extends BaseActivity implements DatePickerDialog.OnD
     @BindView(R.id.politicsCheckBox) CheckBox politicsCheckBox;
     @BindView(R.id.sportsCheckBox) CheckBox sportsCheckBox;
     @BindView(R.id.travelCheckBox) CheckBox travelCheckBox;
-    @BindView(R.id.notificationSearchTerm) EditText searchTermText;
+    @BindView(R.id.searchTerm) EditText searchTermText;
     @BindView(R.id.sortSwitch) Switch sortSwitch;
     @BindView(R.id.progressBar) ProgressBar progressBar;
     ArrayList<CheckBox> searchSubjectCheckBoxes;

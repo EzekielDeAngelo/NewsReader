@@ -1,95 +1,66 @@
 package com.antho.newsreader.view.activities;
 
-import android.view.View;
+import android.app.Instrumentation;
+import android.content.Context;
+import android.content.Intent;
+import android.support.test.InstrumentationRegistry;
 
+import android.support.test.rule.ActivityTestRule;
+import android.support.test.runner.AndroidJUnit4;
+import android.view.KeyEvent;
+
+import static android.support.test.InstrumentationRegistry.getInstrumentation;
+import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import com.antho.newsreader.R;
 
+import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
-public class MainActivityTest {
+@RunWith(AndroidJUnit4.class)
+public class MainActivityTest
+{
+    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(MainActivity.class.getName(), null, false);
     private MainActivity mainActivity = null;
-    @Test
-    public void onCreate() {
-        View view = mainActivity.findViewById(R.id.fragment_frame);
-        assertNotNull(view);
-    }
-
-    @Test
-    public void changeFragment() {
-    }
-
-    @Test
-    public void onCreateOptionsMenu() {
-    }
-
-    @Test
-    public void onOptionsItemSelected() {
-    }
-
-    @Test
-    public void onItemClicked() {
-    }
-
-    @Test
-    public void layoutRes() {
-    }
-}
-/*
     @Rule
-    public ActivityTestRule<MainActivity> mainActivityActivityTestRule = new ActivityTestRule<>(MainActivity.class);
-
-    private MainActivity mainActivity = null;
-    // Monitor for notifications activity
-    Instrumentation.ActivityMonitor notificationsMonitor = getInstrumentation().addMonitor(NotificationsActivity.class.getName(), null, false);
-    // Monitor for search activity
-    Instrumentation.ActivityMonitor searchMonitor = getInstrumentation().addMonitor(SearchActivity.class.getName(), null, false);
-
+    public ActivityTestRule<MainActivity> mainActivityRule = new ActivityTestRule<>(MainActivity.class);
     @Before
     public void setUp() throws Exception
     {
-        mainActivity = mainActivityActivityTestRule.getActivity();
+        mainActivity = mainActivityRule.getActivity();
+    }
+    // Context of the app under test.
+    @Test
+    public void useAppContext() throws Exception
+    {
+        Context appContext = InstrumentationRegistry.getTargetContext();
+        assertEquals("com.antho.newsreader", appContext.getPackageName());
     }
 
     @Test
-    public void testLaunch()
+    public void testLaunchSearchActivity()
     {
-        View view = mainActivity.findViewById(R.id.toolbar);
-        assertNotNull(view);
-    }
-    @Test
-    public void testViewPager()
-    {
-        assertNotNull(mainActivity.findViewById(R.id.pager));
-        onView(allOf(withId(R.id.recyclerview_top_stories), isDisplayed())).perform(click());
-        onView(withId(R.id.pager)).perform(swipeLeft());
-        onView(allOf(withId(R.id.recyclerview_most_popular), isDisplayed())).perform(click());
-        mainActivity.finish();
+        onView(withId(R.id.search_item)).perform(click());
+        mainActivityRule.launchActivity(new Intent());
     }
     @Test
     public void testLaunchNotificationsActivity()
     {
-        onView(withId(R.id.drawer_layout)).check(matches(isClosed(Gravity.LEFT))).perform(open());
-        onView(withId(R.id.nav_view)).perform(navigateTo(R.id.nav_notifications));
-        Activity notificationsActivity = getInstrumentation().waitForMonitorWithTimeout(notificationsMonitor, 5000);
-        assertNotNull(notificationsActivity);
-        notificationsActivity.finish();
+        getInstrumentation().sendKeyDownUpSync(KeyEvent.KEYCODE_MENU);
+        getInstrumentation().invokeMenuActionSync(mainActivity, R.id.settings_notifications, 0);
+        mainActivityRule.launchActivity(new Intent());
     }
     @Test
-    public void testLaunchSearchActivity()
+    public void testChangeFragment()
     {
-        onView(withId(R.id.drawer_layout)).check(matches(isClosed(Gravity.LEFT))).perform(open());
-        onView(withId(R.id.nav_view)).perform(navigateTo(R.id.nav_search));
-        Activity searchActivity = getInstrumentation().waitForMonitorWithTimeout(searchMonitor, 5000);
-        assertNotNull(searchActivity);
-        searchActivity.finish();
-    }
-    @After
-    public void tearDown() throws Exception
-    {
-        mainActivity = null;
+        onView(withId(R.id.action_world)).perform(click());
+        onView(withId(R.id.action_business)).perform(click());
+        onView(withId(R.id.action_popular)).perform(click());
+        onView(withId(R.id.action_sports)).perform(click());
     }
 }
-
- */

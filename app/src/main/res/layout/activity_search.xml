@@ -55,7 +55,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
     <EditText
-        android:id="@+id/notificationSearchTerm"
+        android:id="@+id/searchTerm"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -81,7 +81,7 @@
         android:text="Begin date"
         app:layout_constraintEnd_toEndOf="@+id/fromDate"
         app:layout_constraintStart_toStartOf="@+id/fromDate"
-        app:layout_constraintTop_toBottomOf="@+id/notificationSearchTerm" />
+        app:layout_constraintTop_toBottomOf="@+id/searchTerm" />
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -93,7 +93,7 @@
         app:layout_constraintEnd_toEndOf="@+id/toDate"
         app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="@+id/toDate"
-        app:layout_constraintTop_toBottomOf="@+id/notificationSearchTerm" />
+        app:layout_constraintTop_toBottomOf="@+id/searchTerm" />
     <TextView
         android:id="@+id/toDate"
         style="@android:style/Widget.Holo.Spinner"
@@ -232,5 +232,5 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@+id/textView2"
         app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/notificationSearchTerm" />
+        app:layout_constraintTop_toBottomOf="@+id/searchTerm" />
 </android.support.constraint.ConstraintLayout>
