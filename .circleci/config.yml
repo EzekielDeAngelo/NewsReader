@@ -32,7 +32,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: command: sudo chmod +x ./gradlew
+      - run: sudo chmod +x ./gradlew
 
       - save_cache:
           paths:
