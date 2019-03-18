@@ -9,7 +9,6 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -177,6 +176,7 @@ public class MainActivity extends BaseActivity implements NewsAdapter.OnStoryCli
                 return super.onOptionsItemSelected(item);
         }
     }
+
     // On click listener with url and section as parameters to display news in webview
     @Override
     public void onItemClicked(String url, String section)

@@ -78,7 +78,6 @@ dependencies
     androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:2.0'
     // Picasso
     implementation "com.jakewharton.picasso:picasso2-okhttp3-downloader:$picassoVersion"
-
     // Test Dependencies
     testImplementation 'org.robolectric:robolectric:4.0.2'
 }
