@@ -11,19 +11,19 @@ import retrofit2.http.Query;
 public interface NewsService
 {
     // Call to top stories API
-    @GET("topstories/v2/home.json?api-key=829b53058f9f400d94c5d44245489fdf")
+    @GET("topstories/v2/home.json?api-key=C0v60kXXPtAEzaF1eYZL8oeBnGWvVlxs")
     Single<NewsList> getWorldNews();
     // Call to most popular API
-    @GET("mostpopular/v2/mostviewed/all-sections/7.json?api-key=829b53058f9f400d94c5d44245489fdf")
+    @GET("mostpopular/v2/mostviewed/all-sections/7.json?api-key=C0v60kXXPtAEzaF1eYZL8oeBnGWvVlxs")
     Single<PopularList> getPopularNews();
     // Call to business API
-    @GET("topstories/v2/business.json?api-key=a27a66145d4542d28a719cecee6de859")
+    @GET("topstories/v2/business.json?api-key=C0v60kXXPtAEzaF1eYZL8oeBnGWvVlxs")
     Single<NewsList> getBusinessNews();
     // Call to sports API
-    @GET("topstories/v2/sports.json?api-key=a27a66145d4542d28a719cecee6de859")
+    @GET("topstories/v2/sports.json?api-key=C0v60kXXPtAEzaF1eYZL8oeBnGWvVlxs")
     Single<NewsList> getSportsNews();
     // Call to article search API
-    @GET("search/v2/articlesearch.json?api-key=a27a66145d4542d28a719cecee6de859")
+    @GET("search/v2/articlesearch.json?api-key=C0v60kXXPtAEzaF1eYZL8oeBnGWvVlxs")
     Single<SearchListResponse> getSearchNews(
             @Query("q") String query,
             @Query("fq") String categories,

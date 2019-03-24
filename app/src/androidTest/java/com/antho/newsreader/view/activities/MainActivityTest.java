@@ -23,7 +23,7 @@ import org.junit.runner.RunWith;
 import static org.junit.Assert.*;
 
 @RunWith(AndroidJUnit4.class)
-public class MainActivityTest
+public class  MainActivityTest
 {
     Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(MainActivity.class.getName(), null, false);
     private MainActivity mainActivity = null;
