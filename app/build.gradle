@@ -44,7 +44,7 @@ dependencies
     annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
     annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
     // Conductor
-    implementation "com.bluelinelabs:conductor:$conductorVersion"
+    //implementation "com.bluelinelabs:conductor:$conductorVersion"
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
@@ -79,5 +79,5 @@ dependencies
     // Picasso
     implementation "com.jakewharton.picasso:picasso2-okhttp3-downloader:$picassoVersion"
     // Test Dependencies
-    testImplementation 'org.robolectric:robolectric:4.0.2'
+    //testImplementation 'org.robolectric:robolectric:4.0.2'
 }
