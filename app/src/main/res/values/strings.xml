@@ -18,4 +18,17 @@
     <!-- Notifications -->
     <string name="channel_name">new_channel_1</string>
     <string name="channel_description">desc</string>
+    <!-- Navigation drawer-->
+    <string name="navigation_drawer_world">World</string>
+    <string name="navigation_drawer_popular">Popular</string>
+    <string name="navigation_drawer_sports">Sports</string>
+    <string name="navigation_drawer_business">Business</string>
+
+    <string name="navigation_drawer_search">Search</string>
+    <string name="navigation_drawer_notifications">Notifications</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">desc</string>
 </resources>
+

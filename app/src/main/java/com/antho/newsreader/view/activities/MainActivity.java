@@ -5,10 +5,15 @@ import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -26,7 +31,7 @@ import com.antho.newsreader.view.fragments.adapter.PopularAdapter;
 
 import butterknife.BindView;
 /** Load UI elements on application startup **/
-public class MainActivity extends BaseActivity implements NewsAdapter.OnStoryClickedListener, PopularAdapter.OnStoryClickedListener
+public class MainActivity extends BaseActivity implements NewsAdapter.OnStoryClickedListener, PopularAdapter.OnStoryClickedListener, NavigationView.OnNavigationItemSelectedListener
 {
     @BindView(R.id.navigation) BottomNavigationView bottomNavigationView;
     private static final String SELECTED_INDEX_KEY = "selected_index";
@@ -46,6 +51,9 @@ public class MainActivity extends BaseActivity implements NewsAdapter.OnStoryCli
         loadFirstFragment(selectedIndex);
         setUpBottomNavigation();
         NOTIFICATION_CHANNEL_ID = NotificationUtil.createNotificationChannel(this);
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
     }
     // Loads fragment based on index given as parameter
     private void loadFirstFragment(int selectedIndex)
@@ -186,10 +194,59 @@ public class MainActivity extends BaseActivity implements NewsAdapter.OnStoryCli
         intent.putExtra("section", section);
         startActivity(intent);
     }
+    // Handles navigation drawer behavior
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        bottomNavigationView.setSelectedItemId(id);
+
+        if (id == R.id.nav_world)
+        {
+            Fragment fragmentTop = fragmentManager.findFragmentByTag(WORLD_NEWS_TAG);
+            if (fragmentTop == null) fragmentTop = WorldFragment.newInstance();
+            changeFragment(fragmentTop, WORLD_NEWS_TAG);
+        }
+        if (id == R.id.nav_popular)
+        {
+            Fragment fragmentTrending = fragmentManager.findFragmentByTag(POPULAR_NEWS_TAG);
+            if (fragmentTrending == null)
+                fragmentTrending = PopularFragment.newInstance();
+            changeFragment(fragmentTrending, POPULAR_NEWS_TAG);
+        }
+        if (id == R.id.nav_sports)
+        {
+            Fragment fragmentBusiness = fragmentManager.findFragmentByTag(BUSINESS_NEWS_TAG);
+            if (fragmentBusiness == null)
+                fragmentBusiness = BusinessFragment.newInstance();
+            changeFragment(fragmentBusiness, BUSINESS_NEWS_TAG);
+        }
+        if (id == R.id.nav_business)
+        {
+            Fragment fragmentSports = fragmentManager.findFragmentByTag(SPORTS_NEWS_TAG);
+            if (fragmentSports == null) fragmentSports = SportsFragment.newInstance();
+            changeFragment(fragmentSports, SPORTS_NEWS_TAG);
+        }
+        if (id == R.id.nav_search)
+        {
+            Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+            startActivity(intent);
+        }
+        if (id == R.id.nav_notifications)
+        {
+            Intent intent = new Intent(MainActivity.this, NotificationsActivity.class);
+            startActivity(intent);
+        }
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
     // Return activity layout
     @Override
     protected int layoutRes()
     {
         return R.layout.activity_main;
     }
+
+
+
 }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group
+        android:id="@+id/nav_group_fragments"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_world"
+
+            android:title="@string/navigation_drawer_world" />
+
+        <item
+            android:id="@+id/nav_popular"
+            android:title="@string/navigation_drawer_popular" />
+        <item
+            android:id="@+id/nav_sports"
+            android:title="@string/navigation_drawer_sports" />
+        <item
+            android:id="@+id/nav_business"
+            android:title="@string/navigation_drawer_business" />
+    </group>
+    <group
+        android:id="@+id/nav_group_activities"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_search"
+            android:title="@string/navigation_drawer_search" />
+        <item
+            android:id="@+id/nav_notifications"
+            android:title="@string/navigation_drawer_notifications" />
+    </group>
+
+</menu>

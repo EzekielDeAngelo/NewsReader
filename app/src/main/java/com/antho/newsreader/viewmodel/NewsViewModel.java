@@ -37,7 +37,7 @@ public class NewsViewModel extends ViewModel
     // Return loading status
     public LiveData<Boolean> getLoading() { return loading; }
     // Load news from top stories API
-    private void loadTopStories()
+     void loadTopStories()
     {
         loading.setValue(true);
         Single<NewsList> newsCall;
