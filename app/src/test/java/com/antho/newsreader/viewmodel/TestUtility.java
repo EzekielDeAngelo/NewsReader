@@ -1,6 +1,6 @@
 package com.antho.newsreader.viewmodel;
-/** Test Utility**/
-import android.support.annotation.Nullable;
+/** Test utility **/
+import androidx.annotation.Nullable;
 
 import com.antho.newsreader.model.news.News;
 import com.antho.newsreader.model.news.NewsThumbnail;

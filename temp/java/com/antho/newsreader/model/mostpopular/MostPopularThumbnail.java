@@ -1,6 +1,6 @@
 package com.antho.newsreader.model.popular;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import com.antho.newsreader.model.popular.AutoValue_MostPopularThumbnail;
 import com.google.auto.value.AutoValue;
 import com.squareup.moshi.Json;

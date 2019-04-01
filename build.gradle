@@ -42,7 +42,7 @@ ext
     rxAndroidVersion = '2.0.1'
     rxCallAdapterVersion = '2.3.0'
     threeTenVersion = '1.1.0'
-    butterKnifeVersion = '8.8.1'
+    butterKnifeVersion = '10.1.0'
     rxRelayVersion = '2.0.0'
     mockitoVersion = '2.21.0'
     picassoVersion = '1.1.0'

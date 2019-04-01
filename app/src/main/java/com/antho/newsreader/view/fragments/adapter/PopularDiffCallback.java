@@ -1,6 +1,6 @@
 package com.antho.newsreader.view.fragments.adapter;
 /** Popular diff callback **/
-import android.support.v7.util.DiffUtil;
+import androidx.recyclerview.widget.DiffUtil;
 
 import com.antho.newsreader.model.popular.Popular;
 

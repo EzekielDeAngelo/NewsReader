@@ -1,19 +1,18 @@
 package com.antho.newsreader.view.activities.search;
 /** Search results activity **/
-import android.arch.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.View;
 import android.widget.TextView;
 
 import com.antho.newsreader.R;
 import com.antho.newsreader.base.BaseActivity;
-import com.antho.newsreader.view.activities.MainActivity;
 import com.antho.newsreader.view.activities.WebViewActivity;
 import com.antho.newsreader.view.activities.search.adapter.SearchResultsAdapter;
 import com.antho.newsreader.viewmodel.SearchViewModel;

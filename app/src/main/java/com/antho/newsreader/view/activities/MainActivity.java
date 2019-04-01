@@ -1,19 +1,15 @@
 package com.antho.newsreader.view.activities;
 /** Main activity **/
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
+import androidx.annotation.NonNull;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -37,7 +33,7 @@ public class MainActivity extends BaseActivity implements NewsAdapter.OnStoryCli
     private static final String SELECTED_INDEX_KEY = "selected_index";
     private static final String WORLD_NEWS_TAG = "TOP_NEWS_TAG";
     private static final String POPULAR_NEWS_TAG = "TRENDING_NEWS_TAG";
-    private static final String BUSINESS_NEWS_TAG = "BUSINESS_NEWS_TAG ";
+    private static final String BUSINESS_NEWS_TAG = "BUSINESS_NEWS_TAG";
     private static final String SPORTS_NEWS_TAG = "SPORTS_NEWS_TAG";
     public static String NOTIFICATION_CHANNEL_ID;
     private FragmentManager fragmentManager;
@@ -103,6 +99,7 @@ public class MainActivity extends BaseActivity implements NewsAdapter.OnStoryCli
     // Set up buttons for bottom navigation view
     private void setUpBottomNavigation()
     {
+        bottomNavigationView.setBackgroundColor(getResources().getColor(R.color.textColorPrimary));
         bottomNavigationView.setOnNavigationItemSelectedListener(menuItem ->
         {
             switch (menuItem.getItemId())

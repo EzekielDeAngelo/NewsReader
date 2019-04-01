@@ -1,8 +1,8 @@
 package com.antho.newsreader.model.search;
 
 /****/
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.antho.newsreader.model.search.AutoValue_ArticleSearchNews;
 import com.google.auto.value.AutoValue;

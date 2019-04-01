@@ -1,6 +1,6 @@
 package com.antho.newsreader.model.news;
 /****/
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.antho.newsreader.model.news.AutoValue_TopStoriesNews;
 import com.google.auto.value.AutoValue;

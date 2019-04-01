@@ -1,6 +1,6 @@
 package com.antho.newsreader.model;
 /****/
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 
 import com.squareup.moshi.FromJson;

@@ -2,7 +2,7 @@ package com.antho.newsreader.view.activities.notifications.handlers;
 /** Notification Intent Service **/
 import android.app.IntentService;
 import android.content.Intent;
-import android.support.v4.app.NotificationManagerCompat;
+import androidx.core.app.NotificationManagerCompat;
 import android.util.Log;
 
 import com.antho.newsreader.view.activities.notifications.NotificationsActivity;

@@ -1,10 +1,11 @@
 package com.antho.newsreader.viewmodel;
 /** Most popular viewmodel**/
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModel;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 
 import com.antho.newsreader.db.NewsApi;
+import com.antho.newsreader.model.news.News;
 import com.antho.newsreader.model.popular.Popular;
 import com.antho.newsreader.model.popular.PopularList;
 
@@ -37,6 +38,10 @@ public class PopularViewModel extends ViewModel
     // Return loading status
     public LiveData<Boolean> getLoading() {
         return loading;
+    }
+    // Return MutableLiveData for testing purpose
+    public MutableLiveData<List<Popular>> getMutableLiveData() {
+        return popularList;
     }
     // Load popular news from most popular API
     private void loadPopularStories()

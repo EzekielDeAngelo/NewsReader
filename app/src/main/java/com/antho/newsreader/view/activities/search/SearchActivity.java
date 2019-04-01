@@ -3,7 +3,7 @@ package com.antho.newsreader.view.activities.search;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;

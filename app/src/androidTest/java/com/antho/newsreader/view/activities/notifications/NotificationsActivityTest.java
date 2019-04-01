@@ -1,25 +1,25 @@
 package com.antho.newsreader.view.activities.notifications;
-/** **/
-import android.support.test.rule.ActivityTestRule;
-import android.support.test.runner.AndroidJUnit4;
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
-import static android.support.test.espresso.action.ViewActions.typeText;
-import static android.support.test.espresso.matcher.ViewMatchers.withId;
+/** Notifications activity test**/
+import androidx.test.rule.ActivityTestRule;
+import androidx.test.runner.AndroidJUnit4;
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
+import static androidx.test.espresso.action.ViewActions.typeText;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 import com.antho.newsreader.R;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-/** **/
+/** UI tests for notifications activity **/
 @RunWith(AndroidJUnit4.class)
 public class NotificationsActivityTest
 {
     @Rule
     public ActivityTestRule<NotificationsActivity> searchActivityRule = new ActivityTestRule<>(NotificationsActivity.class);
-
+    // Perform tests on every view of the notifications activity
     @Test
     public void testNotifications()
     {

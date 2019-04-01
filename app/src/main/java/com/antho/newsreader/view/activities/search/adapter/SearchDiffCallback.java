@@ -1,6 +1,6 @@
 package com.antho.newsreader.view.activities.search.adapter;
 /** Search diff callback **/
-import android.support.v7.util.DiffUtil;
+import androidx.recyclerview.widget.DiffUtil;
 
 import com.antho.newsreader.model.search.Search;
 

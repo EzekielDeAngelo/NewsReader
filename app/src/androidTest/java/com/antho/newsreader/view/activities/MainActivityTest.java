@@ -1,18 +1,18 @@
 package com.antho.newsreader.view.activities;
-
+/** Main activity test **/
 import android.app.Instrumentation;
 import android.content.Context;
 import android.content.Intent;
-import android.support.test.InstrumentationRegistry;
+import androidx.test.InstrumentationRegistry;
 
-import android.support.test.rule.ActivityTestRule;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.rule.ActivityTestRule;
+import androidx.test.runner.AndroidJUnit4;
 import android.view.KeyEvent;
 
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.InstrumentationRegistry.getInstrumentation;
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import com.antho.newsreader.R;
 
 import org.junit.Before;
@@ -21,7 +21,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
-
+/** UI tests for main activity **/
 @RunWith(AndroidJUnit4.class)
 public class  MainActivityTest
 {
@@ -41,13 +41,14 @@ public class  MainActivityTest
         Context appContext = InstrumentationRegistry.getTargetContext();
         assertEquals("com.antho.newsreader", appContext.getPackageName());
     }
-
+    // Test on search activity launch
     @Test
     public void testLaunchSearchActivity()
     {
         onView(withId(R.id.search_item)).perform(click());
         mainActivityRule.launchActivity(new Intent());
     }
+    // Test on notifications activity launch
     @Test
     public void testLaunchNotificationsActivity()
     {
@@ -55,6 +56,7 @@ public class  MainActivityTest
         getInstrumentation().invokeMenuActionSync(mainActivity, R.id.settings_notifications, 0);
         mainActivityRule.launchActivity(new Intent());
     }
+    // Perform clicks on navigation view to put fragment change under test
     @Test
     public void testChangeFragment()
     {

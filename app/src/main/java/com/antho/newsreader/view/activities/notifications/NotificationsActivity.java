@@ -2,11 +2,11 @@ package com.antho.newsreader.view.activities.notifications;
 /** Notification activity **/
 import android.app.job.JobInfo;
 import android.app.job.JobScheduler;
-import android.arch.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProviders;
 import android.content.ComponentName;
 import android.os.Bundle;
 import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;

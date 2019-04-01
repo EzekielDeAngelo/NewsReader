@@ -1,7 +1,7 @@
 package com.antho.newsreader.model.popular;
 
 /****/
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.antho.newsreader.model.popular.AutoValue_MostPopularNews;
 import com.google.auto.value.AutoValue;

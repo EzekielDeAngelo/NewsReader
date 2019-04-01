@@ -2,7 +2,7 @@ package com.antho.newsreader.view.activities;
 /** Web view activity**/
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebChromeClient;

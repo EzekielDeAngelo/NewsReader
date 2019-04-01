@@ -1,13 +1,11 @@
 package com.antho.newsreader.model.popular;
 /** Most popular news **/
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.google.auto.value.AutoValue;
 import com.squareup.moshi.Json;
 import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
-
-import org.threeten.bp.ZonedDateTime;
 
 import java.util.List;
 /** Data model for news objects in most popular API **/

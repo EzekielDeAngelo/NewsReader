@@ -1,25 +1,25 @@
 package com.antho.newsreader.view.activities.search;
-/** **/
-import android.support.test.rule.ActivityTestRule;
-import android.support.test.runner.AndroidJUnit4;
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
-import static android.support.test.espresso.action.ViewActions.typeText;
-import static android.support.test.espresso.matcher.ViewMatchers.withId;
+/** Search activity test **/
+import androidx.test.rule.ActivityTestRule;
+import androidx.test.runner.AndroidJUnit4;
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
+import static androidx.test.espresso.action.ViewActions.typeText;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 import com.antho.newsreader.R;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-/** **/
+/** UI tests for search activity**/
 @RunWith(AndroidJUnit4.class)
 public class SearchActivityTest
 {
     @Rule
     public ActivityTestRule<SearchActivity> searchActivityRule = new ActivityTestRule<>(SearchActivity.class);
-
+    // Perform tests on every view of the search activity
     @Test
     public void testSearch()
     {
