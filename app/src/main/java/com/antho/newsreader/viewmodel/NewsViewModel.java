@@ -14,7 +14,7 @@ import io.reactivex.Single;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
-/** Viewmodel for top stories API **/
+/** ViewModel for top stories API **/
 public class NewsViewModel extends ViewModel
 {
     private MutableLiveData<List<News>> newsList = new MutableLiveData<>();
@@ -36,6 +36,10 @@ public class NewsViewModel extends ViewModel
     public LiveData<Boolean> getError() { return topStoriesLoadError; }
     // Return loading status
     public LiveData<Boolean> getLoading() { return loading; }
+    // Return MutableLiveData for testing purpose
+    public MutableLiveData<List<News>> getMutableLiveData() {
+        return newsList;
+    }
     // Load news from top stories API
      void loadTopStories()
     {

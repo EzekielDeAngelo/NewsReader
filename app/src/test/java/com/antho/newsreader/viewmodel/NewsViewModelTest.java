@@ -1,46 +1,101 @@
 package com.antho.newsreader.viewmodel;
-
-import android.arch.lifecycle.Observer;
-
-import com.antho.newsreader.db.NewsService;
+/** News ViewModel Test**/
 import com.antho.newsreader.model.news.News;
+import com.jraska.livedata.TestLifecycle;
+import com.jraska.livedata.TestObserver;
+
+import android.arch.core.executor.testing.InstantTaskExecutorRule;
+import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.MutableLiveData;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.mockito.Spy;
 
 import java.util.List;
-
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.verify;
-
+/** **/
 public class NewsViewModelTest
 {
-    private NewsViewModel newsViewModel;
-    @Mock
-    private NewsService service;
-    @Mock
-    Observer observer = Observer<List<News>>();
+    @Rule
+    public InstantTaskExecutorRule testRule = new InstantTaskExecutorRule();
+    private NewsViewModel viewModel;
+    //
     @Before
     public void setUp() throws Exception
     {
-        MockitoAnnotations.initMocks(this);
-
-        newsViewModel = spy(new NewsViewModel(""));
-
+        viewModel = new NewsViewModel("BUSINESS_NEWS_TAG");
     }
+    //
     @Test
-    public void test()
+    public void directAssertion()
     {
-        observer = mock(Observer<List<News>>);
-        newsViewModel.getNews().observeForever(observer);
-        newsViewModel.loadTopStories();
-       // verify(observer).onChanged(Resource(ResourceState.LOADING))
+        LiveData<List<News>> liveData = viewModel.getNews();
+        TestObserver.test(liveData)
+                .assertNoValue();
     }
-    @Spy
-    NewsViewModel viewModel = new NewsViewModel("");
+    //
+    @Test
+    public void setValueTest()
+    {
+        MutableLiveData<List<News>> liveData = viewModel.getMutableLiveData();
+        TestObserver<List<News>> testObserver = TestObserver.test(liveData);
 
+        List<News> dummyList = TestUtility.getTestingNewsListOfSize(3);
+        liveData.setValue(dummyList);
+
+        List<News> value = testObserver.value();
+        assertThat(value).isEqualTo(dummyList);
+
+        liveData.removeObserver(testObserver);
+        assertThat(liveData.hasObservers()).isFalse();
+    }
+
+    @Test
+    public void counterHistoryTest()
+    {
+        MutableLiveData<List<News>> liveData = viewModel.getMutableLiveData();
+        TestObserver<List<News>> testObserver = TestObserver.test(liveData);
+
+        List<News> dummyList = TestUtility.getTestingNewsListOfSize(3);
+        liveData.setValue(dummyList);
+
+        testObserver.assertHasValue()
+                .assertHistorySize(1);
+
+        for(int i = 0; i < 4; i++) {
+            liveData.setValue(TestUtility.getTestingNewsListOfSize(30));
+        }
+
+        testObserver.
+                assertHasValue()
+                .assertHistorySize(5);
+
+    }
+
+    @Test
+    public void useObserverWithLifecycle() {
+        TestObserver<List<News>> testObserver = TestObserver.create();
+        TestLifecycle testLifecycle = TestLifecycle.initialized();
+
+        viewModel.getNews().observe(testLifecycle, testObserver);
+
+        testObserver.assertNoValue();
+
+        testLifecycle.resume();
+
+        for (int i = 0; i < 4; i++) {
+            viewModel
+                    .getMutableLiveData()
+                    .setValue(TestUtility.getTestingNewsListOfSize(4));
+        }
+
+        List<News> newsList = TestUtility.getTestingNewsListOfSize(10);
+        viewModel.getMutableLiveData().setValue(newsList);
+
+        testObserver.assertHasValue()
+                .assertValue(newsList)
+                .assertHistorySize(5);
+
+        viewModel.getNews().removeObserver(testObserver);
+    }
 }
