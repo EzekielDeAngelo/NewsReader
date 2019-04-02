@@ -6,6 +6,9 @@ import com.antho.newsreader.model.news.News;
 import com.antho.newsreader.model.news.NewsThumbnail;
 import com.antho.newsreader.model.popular.Popular;
 import com.antho.newsreader.model.popular.PopularMedia;
+import com.antho.newsreader.model.search.Search;
+import com.antho.newsreader.model.search.SearchHeadline;
+import com.antho.newsreader.model.search.SearchMultimedia;
 
 import org.threeten.bp.ZonedDateTime;
 
@@ -51,7 +54,8 @@ public class TestUtility
     {
         List<Popular> dummyList = new ArrayList<>();
         for(int i = 0; i < size; i++) {
-            Popular popular = new Popular() {
+            Popular popular = new Popular()
+            {
                 @Override
                 public String title() { return generateRandomString(); }
 
@@ -70,6 +74,34 @@ public class TestUtility
                 public List<PopularMedia> multimedia() { return null; }
             };
             dummyList.add(popular);
+        }
+        return dummyList;
+    }
+    //
+    public static List<Search> getTestingSearchListOfSize(int size)
+    {
+        List<Search> dummyList = new ArrayList<>();
+        for (int i = 0 ; i < size ; i++)
+        {
+            Search search = new Search()
+            {
+                @Override
+                public SearchHeadline headline() { return null; }
+
+                @Override
+                public String section() { return generateRandomString(); }
+
+                @Override
+                public String url() { return generateRandomString(); }
+
+                @Override
+                public String date() { return generateRandomString(); }
+
+                @Nullable
+                @Override
+                public List<SearchMultimedia> multimedia() { return null; }
+            };
+            dummyList.add(search);
         }
         return dummyList;
     }

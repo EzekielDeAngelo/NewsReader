@@ -40,6 +40,10 @@ public class SearchViewModel extends ViewModel
     public LiveData<Boolean> getLoading() {
         return loading;
     }
+    // Return MutableLiveData for testing purpose
+    public MutableLiveData<List<Search>> getMutableLiveData() {
+        return searchList;
+    }
     // Search for news based on query parameters
     @SuppressLint("CheckResult")
     public void makeCallForSearch(String query, String categories, String beginDate, String endDate)
