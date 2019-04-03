@@ -18,6 +18,7 @@ import com.antho.newsreader.R;
 import com.antho.newsreader.base.BaseActivity;
 import com.antho.newsreader.view.activities.notifications.handlers.NotificationJobService;
 import com.antho.newsreader.viewmodel.SearchViewModel;
+import com.jakewharton.threetenabp.AndroidThreeTen;
 
 import org.threeten.bp.ZonedDateTime;
 
@@ -72,6 +73,7 @@ public class NotificationsActivity extends BaseActivity
                         }
                     }
                     sb.append(")");
+                    AndroidThreeTen.init(this);
                     categoriesText = sb.toString();
                     String searchTerm = searchTermText.getText().toString();
                     String endDate = String.format(Locale.getDefault(), "%d%02d%02d", ZonedDateTime.now().getYear(), ZonedDateTime.now().getMonthValue(), ZonedDateTime.now().getDayOfMonth());
