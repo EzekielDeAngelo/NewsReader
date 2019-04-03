@@ -90,10 +90,16 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdap
             sectionText.setText(search.section());
             if (search.multimedia().size() > 0)
             {
-                Picasso.Builder builder = new Picasso.Builder(newsImage.getContext());
-                builder.downloader(new OkHttp3Downloader(newsImage.getContext()));
-                builder.build().load(search.multimedia().get(0).thumbnailUrl())
-                    .into(newsImage);
+                String imageUrl = search.multimedia().get(0).thumbnailUrl();
+                if (imageUrl != null && !imageUrl.isEmpty())
+                {
+                    imageUrl = "https://www.nytimes.com/" + imageUrl;
+                    Picasso.Builder builder = new Picasso.Builder(newsImage.getContext());
+                    builder.downloader(new OkHttp3Downloader(newsImage.getContext()));
+                    builder.build()
+                            .load(imageUrl)
+                            .into(newsImage);
+                }
             }
         }
     }

@@ -7,6 +7,8 @@ import android.content.ComponentName;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import androidx.annotation.Nullable;
+
+import android.util.Log;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;

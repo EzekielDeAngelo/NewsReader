@@ -12,10 +12,5 @@ public class GlobalNotificationBuilder
     {
         sGlobalNotificationCompatBuilder = builder;
     }
-    //
-    /*public static NotificationCompat.Builder getNotificationCompatBuilderInstance()
-    {
-        return sGlobalNotificationCompatBuilder;
-    }*/
 }
 
