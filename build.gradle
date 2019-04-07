@@ -53,3 +53,7 @@ repositories {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+wrapper {
+    gradleVersion = '4.10.1'
+}
