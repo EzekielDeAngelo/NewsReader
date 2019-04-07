@@ -29,57 +29,76 @@ android {
 }
 
 dependencies
-{
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    // Dependencies
-    implementation 'androidx.appcompat:appcompat:1.1.0-alpha03'
-    implementation 'com.google.android.material:material:1.1.0-alpha04'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
-    // Timber
-    implementation "com.jakewharton.timber:timber:$timberVersion"
-    // Dagger
-    implementation "com.google.dagger:dagger:$daggerVersion"
-    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
-    annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
-    // Conductor
-    //implementation "com.bluelinelabs:conductor:$conductorVersion"
-    // Retrofit
-    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
-    implementation "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
-    // Moshi
-    implementation "com.squareup.moshi:moshi:$moshiVersion"
-    annotationProcessor "com.ryanharter.auto.value:auto-value-moshi:$autoValueMoshiVersion"
-    compileOnly "com.ryanharter.auto.value:auto-value-moshi-annotations:$autoValueMoshiVersion"
-    // Autovalue
-    compileOnly "com.google.auto.value:auto-value:$autoValueVersion"
-    annotationProcessor "com.google.auto.value:auto-value:$autoValueVersion"
-    // Rx
-    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
-    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
-    implementation "com.squareup.retrofit2:adapter-rxjava2:$rxCallAdapterVersion"
-    // RxRelay
-    implementation "com.jakewharton.rxrelay2:rxrelay:$rxRelayVersion"
-    // Three Ten ABP Version
-    implementation "com.jakewharton.threetenabp:threetenabp:$threeTenVersion"
-    // ButterKnife
-    implementation "com.jakewharton:butterknife:$butterKnifeVersion"
-    annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
-    // ViewModel and Lifecycle
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0-alpha03'
-    // Mockito
-    testImplementation "org.mockito:mockito-core:$mockitoVersion"
-    androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
-    androidTestImplementation 'androidx.test:rules:1.1.2-alpha02'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.2-alpha02'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha02'
-    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.2.0-alpha02'
-    // Picasso
-    implementation "com.jakewharton.picasso:picasso2-okhttp3-downloader:$picassoVersion"
-    // Test Dependencies
-    testImplementation 'com.jraska.livedata:testing:1.1.0'
-    testImplementation "androidx.arch.core:core-testing:2.0.1"
-    testImplementation "org.assertj:assertj-core:2.9.1"
+        {
+            implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+            // Dependencies
+            implementation "androidx.appcompat:appcompat:$supportVersion"
+            implementation "com.google.android.material:material:$supportVersion"
+            implementation "androidx.constraintlayout:constraintlayout:$constraintVersion"
+
+            // Timber
+            implementation "com.jakewharton.timber:timber:$timberVersion"
+
+            // Dagger
+            implementation "com.google.dagger:dagger:$daggerVersion"
+            implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+            implementation 'androidx.legacy:legacy-support-v4:1.0.0-beta01'
+            annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
+            annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+
+            // Conductor
+
+            //implementation "com.bluelinelabs:conductor:$conductorVersion"
+
+            // Retrofit
+            implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+            implementation "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
+
+            // Moshi
+            implementation "com.squareup.moshi:moshi:$moshiVersion"
+            annotationProcessor "com.ryanharter.auto.value:auto-value-moshi:$autoValueMoshiVersion"
+            compileOnly "com.ryanharter.auto.value:auto-value-moshi-annotations:$autoValueMoshiVersion"
+
+            // Autovalue
+            compileOnly "com.google.auto.value:auto-value:$autoValueVersion"
+            annotationProcessor "com.google.auto.value:auto-value:$autoValueVersion"
+
+            // Rx
+            implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+            implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+            implementation "com.squareup.retrofit2:adapter-rxjava2:$rxCallAdapterVersion"
+
+            // RxRelay
+            implementation "com.jakewharton.rxrelay2:rxrelay:$rxRelayVersion"
+
+            // Three Ten ABP Version
+            implementation "com.jakewharton.threetenabp:threetenabp:$threeTenVersion"
+
+            // ButterKnife
+            implementation "com.jakewharton:butterknife:$butterKnifeVersion"
+            annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
+
+            // ViewModel and Lifecycle
+            implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
+
+            // Mockito
+            testImplementation "org.mockito:mockito-core:$mockitoVersion"
+            androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+            androidTestImplementation 'androidx.test:rules:1.1.0-alpha4'
+            testImplementation 'junit:junit:4.12'
+            androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
+            androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+            androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.1.0-alpha4'
+
+            // Picasso
+            implementation "com.jakewharton.picasso:picasso2-okhttp3-downloader:$picassoVersion"
+
+            // Test Dependencies
+            testImplementation 'com.jraska.livedata:testing:1.1.0'
+            testImplementation 'androidx.arch.core:core-testing:2.0.0'
+            testImplementation 'org.assertj:assertj-core:2.9.1'
+        }
+repositories {
+    mavenCentral()
 }

@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.jraska.livedata:testing:1.1.0@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/testing-1.1.0.aar/f73d1a394500541c71e975283a2664ed/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/testing-1.1.0.aar/f73d1a394500541c71e975283a2664ed/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/testing-1.1.0.aar/7256f5b8935ae8e2c9b3d4e467b8314a/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/testing-1.1.0.aar/7256f5b8935ae8e2c9b3d4e467b8314a/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
