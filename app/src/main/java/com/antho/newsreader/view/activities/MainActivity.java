@@ -1,5 +1,4 @@
 package com.antho.newsreader.view.activities;
-/** Main activity **/
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
