@@ -1,8 +1,8 @@
 package com.antho.newsreader.view.activities;
 /** Web view activity**/
+
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
-import androidx.annotation.Nullable;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebChromeClient;
@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 import com.antho.newsreader.R;
 import com.antho.newsreader.base.BaseActivity;
 
+import androidx.annotation.Nullable;
 import butterknife.BindView;
 /** Activity to display news article content as a web page **/
 public class WebViewActivity extends BaseActivity

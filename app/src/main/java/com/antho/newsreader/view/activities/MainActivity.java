@@ -1,14 +1,7 @@
 package com.antho.newsreader.view.activities;
+
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -23,7 +16,15 @@ import com.antho.newsreader.view.fragments.SportsFragment;
 import com.antho.newsreader.view.fragments.WorldFragment;
 import com.antho.newsreader.view.fragments.adapter.NewsAdapter;
 import com.antho.newsreader.view.fragments.adapter.PopularAdapter;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import butterknife.BindView;
 /** Load UI elements on application startup **/
 public class MainActivity extends BaseActivity implements NewsAdapter.OnStoryClickedListener, PopularAdapter.OnStoryClickedListener, NavigationView.OnNavigationItemSelectedListener

@@ -1,6 +1,5 @@
 package com.antho.newsreader.viewmodel;
 /** Test utility **/
-import androidx.annotation.Nullable;
 
 import com.antho.newsreader.model.news.News;
 import com.antho.newsreader.model.news.NewsThumbnail;
@@ -15,6 +14,8 @@ import org.threeten.bp.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+
+import androidx.annotation.Nullable;
 /** **/
 public class TestUtility
 {

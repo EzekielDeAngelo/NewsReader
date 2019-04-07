@@ -1,9 +1,10 @@
 package com.antho.newsreader.viewmodel.factory;
 /** Viewmodel factory**/
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.antho.newsreader.viewmodel.NewsViewModel;
+
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 /** Generates viewmodels with a string parameter **/
 public class ViewModelFactory implements ViewModelProvider.Factory
 {

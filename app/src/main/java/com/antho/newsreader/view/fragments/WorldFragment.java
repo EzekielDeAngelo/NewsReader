@@ -1,13 +1,7 @@
 package com.antho.newsreader.view.fragments;
 /** A simple {@link Fragment} subclass.**/
-import androidx.lifecycle.ViewModelProviders;
-import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
@@ -17,6 +11,12 @@ import com.antho.newsreader.view.fragments.adapter.NewsAdapter;
 import com.antho.newsreader.viewmodel.NewsViewModel;
 import com.antho.newsreader.viewmodel.factory.ViewModelFactory;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 /** Creates fragment to display news from top stories API **/
 public class WorldFragment extends BaseFragment

@@ -1,9 +1,7 @@
 package com.antho.newsreader.viewmodel;
 /** Search viewmodel **/
+
 import android.annotation.SuppressLint;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
 import com.antho.newsreader.db.NewsApi;
 import com.antho.newsreader.model.search.Search;
@@ -11,6 +9,9 @@ import com.antho.newsreader.model.search.SearchListResponse;
 
 import java.util.List;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 import io.reactivex.Single;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;

@@ -1,10 +1,11 @@
 package com.antho.newsreader.view.activities.search.adapter;
 /** Search diff callback **/
-import androidx.recyclerview.widget.DiffUtil;
 
 import com.antho.newsreader.model.search.Search;
 
 import java.util.List;
+
+import androidx.recyclerview.widget.DiffUtil;
 /** Overrides diffUtil methods to improve software performance **/
 public class SearchDiffCallback  extends DiffUtil.Callback
 {

@@ -1,11 +1,7 @@
 package com.antho.newsreader.view.fragments;
 /** Business fragment**/
-import androidx.lifecycle.ViewModelProviders;
+
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
@@ -15,6 +11,11 @@ import com.antho.newsreader.view.fragments.adapter.NewsAdapter;
 import com.antho.newsreader.viewmodel.NewsViewModel;
 import com.antho.newsreader.viewmodel.factory.ViewModelFactory;
 
+import androidx.annotation.Nullable;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 /** Creates fragment to display news from top stories/business API **/
 public class BusinessFragment extends BaseFragment

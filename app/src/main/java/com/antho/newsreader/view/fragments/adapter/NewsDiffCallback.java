@@ -1,10 +1,11 @@
 package com.antho.newsreader.view.fragments.adapter;
 /** News diff callback **/
-import androidx.recyclerview.widget.DiffUtil;
 
 import com.antho.newsreader.model.news.News;
 
 import java.util.List;
+
+import androidx.recyclerview.widget.DiffUtil;
 /** Overrides diffUtil methods to improve software performance **/
 public class NewsDiffCallback  extends DiffUtil.Callback
 {

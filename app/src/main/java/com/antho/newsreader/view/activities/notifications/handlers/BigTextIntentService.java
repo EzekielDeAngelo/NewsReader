@@ -1,11 +1,13 @@
 package com.antho.newsreader.view.activities.notifications.handlers;
 /** Notification Intent Service **/
+
 import android.app.IntentService;
 import android.content.Intent;
-import androidx.core.app.NotificationManagerCompat;
 import android.util.Log;
 
 import com.antho.newsreader.view.activities.notifications.NotificationsActivity;
+
+import androidx.core.app.NotificationManagerCompat;
 /** Creates a dismiss action for notifications **/
 public class BigTextIntentService extends IntentService
 {

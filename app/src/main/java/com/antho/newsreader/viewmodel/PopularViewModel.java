@@ -1,16 +1,15 @@
 package com.antho.newsreader.viewmodel;
 /** Most popular viewmodel**/
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
 import com.antho.newsreader.db.NewsApi;
-import com.antho.newsreader.model.news.News;
 import com.antho.newsreader.model.popular.Popular;
 import com.antho.newsreader.model.popular.PopularList;
 
 import java.util.List;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 import io.reactivex.Single;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;

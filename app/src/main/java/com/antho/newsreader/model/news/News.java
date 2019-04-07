@@ -1,6 +1,5 @@
 package com.antho.newsreader.model.news;
 /** Top stories news **/
-import androidx.annotation.Nullable;
 
 import com.google.auto.value.AutoValue;
 import com.squareup.moshi.Json;
@@ -10,6 +9,8 @@ import com.squareup.moshi.Moshi;
 import org.threeten.bp.ZonedDateTime;
 
 import java.util.List;
+
+import androidx.annotation.Nullable;
 /** Data model for news objects in top stories API **/
 @AutoValue
 public abstract class News

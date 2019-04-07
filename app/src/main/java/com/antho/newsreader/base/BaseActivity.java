@@ -1,12 +1,13 @@
 package com.antho.newsreader.base;
 /** Base activity**/
+
 import android.os.Bundle;
-import androidx.annotation.LayoutRes;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.Gravity;
 import android.widget.Toast;
 
+import androidx.annotation.LayoutRes;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import butterknife.ButterKnife;
 /** Implements base methods for all activities **/
 public abstract class BaseActivity  extends AppCompatActivity

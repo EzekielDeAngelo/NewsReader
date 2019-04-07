@@ -1,18 +1,11 @@
 package com.antho.newsreader.view.activities;
 /** Main activity test **/
+
 import android.app.Instrumentation;
 import android.content.Context;
 import android.content.Intent;
-import androidx.test.InstrumentationRegistry;
-
-import androidx.test.rule.ActivityTestRule;
-import androidx.test.runner.AndroidJUnit4;
 import android.view.KeyEvent;
 
-import static androidx.test.InstrumentationRegistry.getInstrumentation;
-import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import com.antho.newsreader.R;
 
 import org.junit.Before;
@@ -20,7 +13,15 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static org.junit.Assert.*;
+import androidx.test.InstrumentationRegistry;
+import androidx.test.rule.ActivityTestRule;
+import androidx.test.runner.AndroidJUnit4;
+
+import static androidx.test.InstrumentationRegistry.getInstrumentation;
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static org.junit.Assert.assertEquals;
 /** UI tests for main activity **/
 @RunWith(AndroidJUnit4.class)
 public class  MainActivityTest

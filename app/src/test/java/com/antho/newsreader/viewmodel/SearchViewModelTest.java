@@ -1,6 +1,6 @@
 package com.antho.newsreader.viewmodel;
 /** Search viewmodel test **/
-import com.antho.newsreader.model.news.News;
+
 import com.antho.newsreader.model.search.Search;
 import com.jraska.livedata.TestLifecycle;
 import com.jraska.livedata.TestObserver;

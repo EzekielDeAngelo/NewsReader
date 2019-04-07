@@ -1,18 +1,19 @@
 package com.antho.newsreader.viewmodel;
 /** News viewmodel test**/
+
 import com.antho.newsreader.model.news.News;
 import com.jraska.livedata.TestLifecycle;
 import com.jraska.livedata.TestObserver;
-
-import androidx.arch.core.executor.testing.InstantTaskExecutorRule;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
 import java.util.List;
+
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import static org.assertj.core.api.Assertions.assertThat;
 /** Unit tests on news viewmodel **/

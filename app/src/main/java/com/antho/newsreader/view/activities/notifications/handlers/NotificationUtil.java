@@ -1,11 +1,10 @@
 package com.antho.newsreader.view.activities.notifications.handlers;
 /** Notification util **/
-import android.app.Notification;
+
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.os.Build;
 import android.content.Context;
-import android.util.Log;
+import android.os.Build;
 
 import com.antho.newsreader.R;
 

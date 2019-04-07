@@ -1,9 +1,9 @@
 package com.antho.newsreader.view.activities.search;
 /** Search activity **/
+
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
 
+import androidx.annotation.Nullable;
 import butterknife.BindView;
 /** Manages the search function through the different search options **/
 public class SearchActivity extends BaseActivity implements DatePickerDialog.OnDateSetListener

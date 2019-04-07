@@ -1,14 +1,11 @@
 package com.antho.newsreader.view.activities.notifications;
 /** Notification activity **/
+
 import android.app.job.JobInfo;
 import android.app.job.JobScheduler;
-import androidx.lifecycle.ViewModelProviders;
 import android.content.ComponentName;
 import android.os.Bundle;
 import android.os.PersistableBundle;
-import androidx.annotation.Nullable;
-
-import android.util.Log;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -25,6 +22,8 @@ import org.threeten.bp.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Locale;
 
+import androidx.annotation.Nullable;
+import androidx.lifecycle.ViewModelProviders;
 import butterknife.BindView;
 /** Handles notifications system **/
 public class NotificationsActivity extends BaseActivity

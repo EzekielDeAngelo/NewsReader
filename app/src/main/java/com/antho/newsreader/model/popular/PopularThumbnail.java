@@ -1,11 +1,12 @@
 package com.antho.newsreader.model.popular;
 /** Most popular thumbnail**/
-import androidx.annotation.Nullable;
 
 import com.google.auto.value.AutoValue;
 import com.squareup.moshi.Json;
 import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
+
+import androidx.annotation.Nullable;
 /** Data model for thumbnail in most popular API **/
 @AutoValue
 public abstract class PopularThumbnail

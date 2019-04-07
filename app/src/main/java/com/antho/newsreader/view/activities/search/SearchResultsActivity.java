@@ -1,13 +1,8 @@
 package com.antho.newsreader.view.activities.search;
 /** Search results activity **/
-import androidx.lifecycle.ViewModelProviders;
+
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.View;
 import android.widget.TextView;
 
@@ -17,6 +12,11 @@ import com.antho.newsreader.view.activities.WebViewActivity;
 import com.antho.newsreader.view.activities.search.adapter.SearchResultsAdapter;
 import com.antho.newsreader.viewmodel.SearchViewModel;
 
+import androidx.annotation.Nullable;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 /** Activity to display news from article search API **/
 public class SearchResultsActivity  extends BaseActivity implements SearchResultsAdapter.OnStoryClickedListener

@@ -1,12 +1,7 @@
 package com.antho.newsreader.view.fragments;
 /** A simple {@link Fragment} subclass. **/
-import androidx.lifecycle.ViewModelProviders;
+
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
@@ -15,6 +10,12 @@ import com.antho.newsreader.base.BaseFragment;
 import com.antho.newsreader.view.fragments.adapter.PopularAdapter;
 import com.antho.newsreader.viewmodel.PopularViewModel;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 /** Creates fragment to display news from most popular API **/
 public class PopularFragment extends BaseFragment

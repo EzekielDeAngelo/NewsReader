@@ -1,13 +1,15 @@
 package com.antho.newsreader.view.activities.search.datepicker;
 /** Date picker fragment**/
+
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
+
+import java.util.Objects;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
-
-import java.util.Objects;
 /** Handles date picker behavior**/
 public class DatePickerFragment extends DialogFragment
 {
