@@ -1,13 +1,10 @@
 package com.antho.newsreader.view.activities.notifications.handlers;
-/** Notification job service**/
-
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.job.JobParameters;
 import android.app.job.JobService;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.antho.newsreader.R;
 import com.antho.newsreader.view.activities.MainActivity;
@@ -17,13 +14,13 @@ import com.antho.newsreader.view.activities.search.SearchResultsActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
+import timber.log.Timber;
+
 /** Job service to show notifications once a day **/
 public class NotificationJobService extends JobService
 {
-    private static final String TAG = "NotificationService";
     private NotificationManagerCompat mNotificationManagerCompat;
-    public static final int NOTIFICATION_ID = 888;
-    private boolean jobCancelled = false;
+    private static final int NOTIFICATION_ID = 888;
 
     private int dailyNews;
     private String query;
@@ -34,35 +31,29 @@ public class NotificationJobService extends JobService
     @Override
     public boolean onStartJob(JobParameters params)
     {
-        Log.d(TAG,"Job started");
+        Timber.d("Job started");
         dailyNews = params.getExtras().getInt("dailynews");
         query = params.getExtras().getString("query");
         categories = params.getExtras().getString("categories");
         beginDate = params.getExtras().getString("begin");
         endDate = params.getExtras().getString("end");
         mNotificationManagerCompat = NotificationManagerCompat.from(getApplicationContext());
-        doBackgroundWork(params);
+        doBackgroundWork();
         return true;
     }
     // Runs the scheduled task
-    private void doBackgroundWork(JobParameters params)
+    private void doBackgroundWork()
     {
-        new Thread(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                if (dailyNews != 0)
-                    checkForNotifications();
-            }
+        new Thread(() -> {
+            if (dailyNews != 0)
+                checkForNotifications();
         }).start();
     }
     // Gets called by the system if the job is cancelled before being finished
     @Override
     public boolean onStopJob(JobParameters params)
     {
-        Log.d(TAG, "Job cancelled before completion");
-        jobCancelled = true;
+        Timber.d( "Job cancelled before completion");
         return true;
     }
     // Search for notifications with specified query settings
@@ -91,19 +82,24 @@ public class NotificationJobService extends JobService
                 new NotificationCompat.Builder(
                         getApplicationContext(), MainActivity.NOTIFICATION_CHANNEL_ID);
         GlobalNotificationBuilder.setNotificationCompatBuilderInstance(notificationCompatBuilder);
-        Notification notification = notificationCompatBuilder.setStyle(bigTextStyle)
-                .setContentTitle("There is " + dailyNews + " news about " + query + " to read today!")
-                .setContentText("NewsReader" )
-                .setSmallIcon(R.drawable.ic_world_news)
-                .setContentIntent(notifyPendingIntent)
-                .setDefaults(NotificationCompat.DEFAULT_ALL)
-                .setColor(ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary))
-                .setCategory(Notification.CATEGORY_REMINDER)
-                .addAction(dismissAction)
-                .setAutoCancel(true)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
-                .build();
+        Notification notification = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M)
+        {
+            notification = notificationCompatBuilder.setStyle(bigTextStyle)
+                    .setContentTitle("There is " + dailyNews + " news about " + query + " to read today!")
+                    .setContentText("NewsReader" )
+                    .setSmallIcon(R.drawable.ic_world_news)
+                    .setContentIntent(notifyPendingIntent)
+                    .setDefaults(NotificationCompat.DEFAULT_ALL)
+                    .setColor(ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary))
+                    .setCategory(Notification.CATEGORY_REMINDER)
+                    .addAction(dismissAction)
+                    .setAutoCancel(true)
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                    .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
+                    .build();
+        }
+        assert notification != null;
         mNotificationManagerCompat.notify(NOTIFICATION_ID, notification);
     }
 }

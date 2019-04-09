@@ -1,13 +1,11 @@
 package com.antho.newsreader.view.fragments.adapter;
-/** Popular diff callback **/
-
 import com.antho.newsreader.model.popular.Popular;
 
 import java.util.List;
 
 import androidx.recyclerview.widget.DiffUtil;
 /** Overrides diffUtil methods to improve software performance **/
-public class PopularDiffCallback extends DiffUtil.Callback
+class PopularDiffCallback extends DiffUtil.Callback
 {
     private final List<Popular> oldList;
     private final List<Popular> newList;

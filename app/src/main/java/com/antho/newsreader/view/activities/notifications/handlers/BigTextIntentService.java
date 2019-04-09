@@ -1,17 +1,16 @@
 package com.antho.newsreader.view.activities.notifications.handlers;
-/** Notification Intent Service **/
-
+import android.annotation.SuppressLint;
 import android.app.IntentService;
 import android.content.Intent;
-import android.util.Log;
+import androidx.core.app.NotificationManagerCompat;
+
+import timber.log.Timber;
 
 import com.antho.newsreader.view.activities.notifications.NotificationsActivity;
-
-import androidx.core.app.NotificationManagerCompat;
 /** Creates a dismiss action for notifications **/
+@SuppressLint("Registered")
 public class BigTextIntentService extends IntentService
 {
-    private static final String TAG = "BigTextService";
     public static final String ACTION_DISMISS = "com.antho.newsreader/.view.activities.notifications.handlers.action.DISMISS";
     public BigTextIntentService()
     {
@@ -21,7 +20,7 @@ public class BigTextIntentService extends IntentService
     @Override
     protected void onHandleIntent(Intent intent)
     {
-        Log.d(TAG, "onHandleIntent(): " + intent);
+        Timber.d( "onHandleIntent(): %s", intent);
         if (intent != null)
         {
             final String action = intent.getAction();
@@ -33,7 +32,8 @@ public class BigTextIntentService extends IntentService
     }
     // Handles action Dismiss in the provided background thread.
     private void handleActionDismiss()
-    {  Log.d(TAG, "handleActionDismiss()");
+    {
+        Timber.d( "handleActionDismiss()");
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getApplicationContext());
         notificationManagerCompat.cancel(NotificationsActivity.NOTIFICATION_ID);
     }

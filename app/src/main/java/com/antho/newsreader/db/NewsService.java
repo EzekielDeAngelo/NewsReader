@@ -1,6 +1,4 @@
 package com.antho.newsreader.db;
-/** News service **/
-
 import com.antho.newsreader.model.news.NewsList;
 import com.antho.newsreader.model.popular.PopularList;
 import com.antho.newsreader.model.search.SearchListResponse;

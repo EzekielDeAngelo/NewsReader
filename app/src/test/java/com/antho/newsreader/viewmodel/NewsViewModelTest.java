@@ -1,6 +1,4 @@
 package com.antho.newsreader.viewmodel;
-/** News viewmodel test**/
-
 import com.antho.newsreader.model.news.News;
 import com.jraska.livedata.TestLifecycle;
 import com.jraska.livedata.TestObserver;

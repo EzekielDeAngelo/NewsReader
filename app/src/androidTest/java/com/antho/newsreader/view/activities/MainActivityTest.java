@@ -1,7 +1,4 @@
 package com.antho.newsreader.view.activities;
-/** Main activity test **/
-
-import android.app.Instrumentation;
 import android.content.Context;
 import android.content.Intent;
 import android.view.KeyEvent;
@@ -23,13 +20,13 @@ import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static org.junit.Assert.assertEquals;
 /** UI tests for main activity **/
+@SuppressWarnings("deprecation")
 @RunWith(AndroidJUnit4.class)
 public class  MainActivityTest
 {
-    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(MainActivity.class.getName(), null, false);
     private MainActivity mainActivity = null;
     @Rule
-    public ActivityTestRule<MainActivity> mainActivityRule = new ActivityTestRule<>(MainActivity.class);
+    public final ActivityTestRule<MainActivity> mainActivityRule = new ActivityTestRule<>(MainActivity.class);
     @Before
     public void setUp() {
         mainActivity = mainActivityRule.getActivity();

@@ -1,6 +1,4 @@
 package com.antho.newsreader.model.news;
-/** Top stories news **/
-
 import com.google.auto.value.AutoValue;
 import com.squareup.moshi.Json;
 import com.squareup.moshi.JsonAdapter;
@@ -12,6 +10,7 @@ import java.util.List;
 
 import androidx.annotation.Nullable;
 /** Data model for news objects in top stories API **/
+@SuppressWarnings("SameReturnValue")
 @AutoValue
 public abstract class News
 {

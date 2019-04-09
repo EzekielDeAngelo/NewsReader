@@ -1,6 +1,4 @@
 package com.antho.newsreader.view.activities;
-/** Web view activity**/
-
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.os.Bundle;

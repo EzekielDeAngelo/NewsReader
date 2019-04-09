@@ -1,6 +1,4 @@
 package com.antho.newsreader.view.fragments.adapter;
-/** News adapter**/
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +14,7 @@ import org.threeten.bp.format.DateTimeFormatter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
@@ -87,13 +86,13 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             this.news = news;
 
             titleText.setText(news.title());
-            dateText.setText(DateTimeFormatter.ofPattern("dd-MM").format(news.date()));
+            dateText.setText(DateTimeFormatter.ofPattern("dd-MM").format(Objects.requireNonNull(news.date())));
             sectionText.setText(news.section());
-            if (news.multimedia().size() > 0 )
+            if (Objects.requireNonNull(news.multimedia()).size() > 0 )
             {
                 Picasso.Builder builder = new Picasso.Builder(newsImage.getContext());
                 builder.downloader(new OkHttp3Downloader(newsImage.getContext()));
-                builder.build().load(news.multimedia().get(0).thumbnailUrl())
+                builder.build().load((Objects.requireNonNull(news.multimedia())).get(0).thumbnailUrl())
                         .into(newsImage);
             }
         }

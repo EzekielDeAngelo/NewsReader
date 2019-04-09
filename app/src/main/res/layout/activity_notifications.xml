@@ -16,17 +16,19 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="Search term"
+        android:hint="@string/search_term"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints=""
+        tools:targetApi="o" />
     <CheckBox
         android:id="@+id/sportsCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Sports"
+        android:text="@string/sports"
         app:layout_constraintEnd_toEndOf="@+id/politicsCheckBox"
         app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="@+id/politicsCheckBox"
@@ -36,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Travel"
+        android:text="@string/travel"
         app:layout_constraintEnd_toEndOf="@+id/sportsCheckBox"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/sportsCheckBox"
@@ -46,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="31dp"
         android:layout_marginTop="8dp"
-        android:text="Entrepreneurs"
+        android:text="@string/entrepreneurs"
         app:layout_constraintStart_toStartOf="@+id/businessCheckBox"
         app:layout_constraintTop_toBottomOf="@+id/businessCheckBox" />
     <CheckBox
@@ -54,7 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Business"
+        android:text="@string/business"
         app:layout_constraintStart_toStartOf="@+id/artsCheckBox"
         app:layout_constraintTop_toBottomOf="@+id/artsCheckBox" />
     <CheckBox
@@ -62,10 +64,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="24dp"
         android:layout_marginStart="8dp"
-        android:text="Arts"
+        android:text="@string/arts"
         app:layout_constraintEnd_toStartOf="@+id/textView6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -75,10 +75,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginRight="32dp"
         android:layout_marginStart="24dp"
-        android:text="Politics"
+        android:text="@string/politics"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toEndOf="@+id/textView6"
@@ -100,9 +98,8 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="15dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
-        android:text="Enable notifications (once per day)"
+        android:text="@string/enable_notifications"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider3"
@@ -131,7 +128,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="Categories"
+        android:text="@string/categories"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchTerm" />
@@ -146,7 +143,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:visibility="invisible"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
-        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/searchTerm" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,4 @@
 package com.antho.newsreader.viewmodel;
-/** Test utility **/
-
 import com.antho.newsreader.model.news.News;
 import com.antho.newsreader.model.news.NewsThumbnail;
 import com.antho.newsreader.model.popular.Popular;
@@ -17,7 +15,7 @@ import java.util.UUID;
 
 import androidx.annotation.Nullable;
 /** **/
-public class TestUtility
+class TestUtility
 {
     //
     public static List<News> getTestingNewsListOfSize(int size)

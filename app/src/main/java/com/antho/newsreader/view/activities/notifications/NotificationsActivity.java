@@ -1,6 +1,4 @@
 package com.antho.newsreader.view.activities.notifications;
-/** Notification activity **/
-
 import android.app.job.JobInfo;
 import android.app.job.JobScheduler;
 import android.content.ComponentName;
@@ -37,11 +35,11 @@ public class NotificationsActivity extends BaseActivity
     @BindView(R.id.searchTerm) EditText searchTermText;
     @BindView(R.id.sortSwitch) Switch sortSwitch;
     @BindView(R.id.progressBar) ProgressBar progressBar;
-    ArrayList<CheckBox> notificationsSubjectCheckBoxes;
-    public static final int NOTIFICATION_ID = 888;
+    private ArrayList<CheckBox> notificationsSubjectCheckBoxes;
     private String categoriesText;
     private SearchViewModel viewModel;
-    int dailyNews;
+    private int dailyNews;
+    public static final int NOTIFICATION_ID = 888;
     // Add all checkboxes and create and handles job service
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
@@ -115,9 +113,7 @@ public class NotificationsActivity extends BaseActivity
     private void observeViewModel()
     {
         viewModel.getSearchNews().observe(this, searchNews ->
-        {
-            dailyNews = searchNews.size();
-        });
+                dailyNews = searchNews.size());
     }
     // Return activity layout
     @Override

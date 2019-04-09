@@ -1,5 +1,4 @@
 package com.antho.newsreader.view.activities;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -131,7 +130,7 @@ public class MainActivity extends BaseActivity implements NewsAdapter.OnStoryCli
         });
     }
     // Load and unload fragments when they are changed
-    public void changeFragment(Fragment fragment, String tagFragmentName)
+    private void changeFragment(Fragment fragment, String tagFragmentName)
     {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Fragment currentFragment = fragmentManager.getPrimaryNavigationFragment();

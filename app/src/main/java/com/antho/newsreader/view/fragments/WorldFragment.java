@@ -1,6 +1,4 @@
 package com.antho.newsreader.view.fragments;
-/** A simple {@link Fragment} subclass.**/
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;

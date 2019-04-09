@@ -1,6 +1,4 @@
 package com.antho.newsreader.base;
-/** Base fragment**/
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,6 +34,7 @@ public abstract class BaseFragment  extends Fragment
         }
     }
     // Set a return value as a layout resource reference
+    @SuppressWarnings("SameReturnValue")
     @LayoutRes
-    public abstract int layoutRes();
+    protected abstract int layoutRes();
 }

@@ -1,17 +1,14 @@
 package com.antho.newsreader.view.activities.notifications.handlers;
-/** Notification util **/
-
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Build;
 
 import com.antho.newsreader.R;
-
 /** Handles notification channel creation **/
 public class NotificationUtil
 {
-    public static final String CHANNEL_ID = "channel_news";
+    private static final String CHANNEL_ID = "channel_news";
     // Create a notifications channel to enable notifications usage
     public static String createNotificationChannel(Context context)
     {

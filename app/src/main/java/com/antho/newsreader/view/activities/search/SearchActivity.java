@@ -1,6 +1,4 @@
 package com.antho.newsreader.view.activities.search;
-/** Search activity **/
-
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -37,7 +35,7 @@ public class SearchActivity extends BaseActivity implements DatePickerDialog.OnD
     @BindView(R.id.searchTerm) EditText searchTermText;
     @BindView(R.id.sortSwitch) Switch sortSwitch;
     @BindView(R.id.progressBar) ProgressBar progressBar;
-    ArrayList<CheckBox> searchSubjectCheckBoxes;
+    private ArrayList<CheckBox> searchSubjectCheckBoxes;
     private boolean isFromDateSelected;
     private String categoriesText;
     private String beginDate;

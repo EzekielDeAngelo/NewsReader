@@ -1,6 +1,4 @@
 package com.antho.newsreader.view.activities.search.adapter;
-/** Search results adapter **/
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

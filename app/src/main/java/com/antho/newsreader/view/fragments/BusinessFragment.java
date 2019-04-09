@@ -1,6 +1,4 @@
 package com.antho.newsreader.view.fragments;
-/** Business fragment**/
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -11,6 +9,7 @@ import com.antho.newsreader.view.fragments.adapter.NewsAdapter;
 import com.antho.newsreader.viewmodel.NewsViewModel;
 import com.antho.newsreader.viewmodel.factory.ViewModelFactory;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -30,7 +29,7 @@ public class BusinessFragment extends BaseFragment
     // Return new instance of business fragment
     public static BusinessFragment newInstance() { return new BusinessFragment(); }
     // Set viewmodel and adapter for business fragment
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState)
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
     {
         super.onViewCreated(view, savedInstanceState);
         viewModel = ViewModelProviders.of(this, new ViewModelFactory(BUSINESS_NEWS_TAG)).get(NewsViewModel.class);

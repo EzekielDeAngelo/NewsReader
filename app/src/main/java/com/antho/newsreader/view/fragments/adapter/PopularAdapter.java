@@ -1,6 +1,4 @@
 package com.antho.newsreader.view.fragments.adapter;
-/** Popular adapter**/
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +13,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LifecycleOwner;
@@ -88,14 +87,16 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.PopularV
         void bind(Popular popular)
         {
             this.popular = popular;
+
             titleText.setText(popular.title());
-            dateText.setText(popular.date().substring(8) + popular.date().substring(4, 7));
+            String date = Objects.requireNonNull(popular.date()).substring(8) + Objects.requireNonNull(popular.date()).substring(4, 7);
+            dateText.setText(date);
             sectionText.setText(popular.section());
-            if (popular.multimedia().size() > 0 )
+            if (Objects.requireNonNull(popular.multimedia()).size() > 0 )
             {
                 Picasso.Builder builder = new Picasso.Builder(newsImage.getContext());
                 builder.downloader(new OkHttp3Downloader(newsImage.getContext()));
-                builder.build().load(popular.multimedia().get(0).media().get(0).thumbnailUrl())
+                builder.build().load(Objects.requireNonNull(Objects.requireNonNull(popular.multimedia()).get(0).media()).get(0).thumbnailUrl())
                     .into(newsImage);
             }
         }

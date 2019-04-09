@@ -1,5 +1,4 @@
 package com.antho.newsreader.db;
-/** News API **/
 import com.antho.newsreader.model.AdapterFactory;
 import com.antho.newsreader.model.ZonedDateTimeAdapter;
 import com.squareup.moshi.Moshi;

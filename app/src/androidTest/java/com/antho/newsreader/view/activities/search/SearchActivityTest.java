@@ -1,6 +1,4 @@
 package com.antho.newsreader.view.activities.search;
-/** Search activity test **/
-
 import com.antho.newsreader.R;
 
 import org.junit.Rule;
@@ -16,6 +14,7 @@ import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 /** UI tests for search activity**/
+@SuppressWarnings("deprecation")
 @RunWith(AndroidJUnit4.class)
 public class SearchActivityTest
 {

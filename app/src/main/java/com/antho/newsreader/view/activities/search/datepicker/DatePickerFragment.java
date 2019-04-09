@@ -1,6 +1,4 @@
 package com.antho.newsreader.view.activities.search.datepicker;
-/** Date picker fragment**/
-
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;

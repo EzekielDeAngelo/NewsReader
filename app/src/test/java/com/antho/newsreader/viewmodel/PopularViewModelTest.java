@@ -1,5 +1,4 @@
 package com.antho.newsreader.viewmodel;
-/** Popular viewmodel test **/
 import com.antho.newsreader.model.popular.Popular;
 import com.jraska.livedata.TestLifecycle;
 import com.jraska.livedata.TestObserver;

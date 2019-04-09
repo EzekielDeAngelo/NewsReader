@@ -1,5 +1,4 @@
 package com.antho.newsreader.model.search;
-/** Article search news list **/
 import com.google.auto.value.AutoValue;
 import com.squareup.moshi.Json;
 import com.squareup.moshi.JsonAdapter;

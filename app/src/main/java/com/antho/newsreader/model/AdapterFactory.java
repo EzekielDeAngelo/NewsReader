@@ -1,5 +1,4 @@
 package com.antho.newsreader.model;
-/** Moshi adapter factory **/
 import com.ryanharter.auto.value.moshi.MoshiAdapterFactory;
 import com.squareup.moshi.JsonAdapter;
 /** Creates an Moshi adapter **/

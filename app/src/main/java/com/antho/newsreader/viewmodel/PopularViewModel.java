@@ -1,6 +1,4 @@
 package com.antho.newsreader.viewmodel;
-/** Most popular viewmodel**/
-
 import com.antho.newsreader.db.NewsApi;
 import com.antho.newsreader.model.popular.Popular;
 import com.antho.newsreader.model.popular.PopularList;
@@ -17,7 +15,7 @@ import timber.log.Timber;
 /** Viewmodel for most popular API **/
 public class PopularViewModel extends ViewModel
 {
-    private MutableLiveData<List<Popular>> popularList = new MutableLiveData<>();
+    private final MutableLiveData<List<Popular>> popularList = new MutableLiveData<>();
     private final MutableLiveData<Boolean> popularLoadError = new MutableLiveData<>();
     private final MutableLiveData<Boolean> loading = new MutableLiveData<>();
     private Disposable disposable;

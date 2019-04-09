@@ -1,6 +1,4 @@
 package com.antho.newsreader.base;
-/** Base activity**/
-
 import android.os.Bundle;
 import android.view.Gravity;
 import android.widget.Toast;

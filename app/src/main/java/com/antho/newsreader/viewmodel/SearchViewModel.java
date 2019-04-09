@@ -1,6 +1,4 @@
 package com.antho.newsreader.viewmodel;
-/** Search viewmodel **/
-
 import android.annotation.SuppressLint;
 
 import com.antho.newsreader.db.NewsApi;
@@ -47,7 +45,7 @@ public class SearchViewModel extends ViewModel
     }
     // Search for news based on query parameters
     @SuppressLint("CheckResult")
-    public void makeCallForSearch(String query, String categories, String beginDate, String endDate)
+    private void makeCallForSearch(String query, String categories, String beginDate, String endDate)
     {
         Single<SearchListResponse> newsCall = NewsApi.getInstance().getSearchNews(query, categories, beginDate, endDate,"oldest");
         disposable = newsCall.subscribeOn(Schedulers.io())

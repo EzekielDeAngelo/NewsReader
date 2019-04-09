@@ -4,14 +4,12 @@
     <string name="settings_notifications">Notifications</string>
     <string name="settings_help">Help</string>
     <string name="settings_about">About</string>
+    <string name="categories">Categories</string>
     <!-- Menu tabs -->
     <string name="world">World</string>
     <string name="popular">Popular</string>
-    <string name="business">Business</string>
-    <string name="sports">Sports</string>
     <!-- Action bar -->
     <string name="search">Search</string>
-    <string name="menu">Menu</string>
     <!-- Error messages -->
     <string name="search_msg">Please enter some search term and select at least one checkbox.</string>
     <string name="api_loading_error">Failed to download news from NYTimes API. Please try again later.</string>
@@ -27,8 +25,19 @@
     <string name="navigation_drawer_search">Search</string>
     <string name="navigation_drawer_notifications">Notifications</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">desc</string>
+    <string name="thumbnail">thumbnail</string>
+    <string name="search_term">Search term</string>
+    <string name="business">Business</string>
+    <string name="sports">Sports</string>
+    <string name="travel">Travel</string>
+    <string name="entrepreneurs">Entrepreneurs</string>
+    <string name="arts">Arts</string>
+    <string name="politics">Politics</string>
+    <string name="enable_notifications">Enable notifications (once per day)</string>
+    <string name="begin_date">Begin date</string>
+    <string name="end_date">End date</string>
+    <string name="oldest_to_newest">Oldest to newest</string>
+    <string name="newest_to_oldest">Newest to oldest</string>
+    <string name="sort_order">Sort Order</string>
 </resources>
 

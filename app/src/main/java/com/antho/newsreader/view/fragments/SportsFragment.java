@@ -1,6 +1,4 @@
 package com.antho.newsreader.view.fragments;
-/** A simple {@link Fragment} subclass. **/
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -11,6 +9,7 @@ import com.antho.newsreader.view.fragments.adapter.NewsAdapter;
 import com.antho.newsreader.viewmodel.NewsViewModel;
 import com.antho.newsreader.viewmodel.factory.ViewModelFactory;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -32,7 +31,7 @@ public class SportsFragment extends BaseFragment
         return new SportsFragment();
     }
     // Set viewmodel and adapter for sports fragment
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState)
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
     {
         super.onViewCreated(view, savedInstanceState);
         viewModel = ViewModelProviders.of(this, new ViewModelFactory(SPORTS_NEWS_TAG)).get(NewsViewModel.class);

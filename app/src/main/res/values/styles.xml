@@ -23,16 +23,9 @@
         <item name="android:textColorSecondary">@color/textColorSecondary</item>
         <item name="colorControlNormal">@color/textColorPrimary</item>
     </style>
-    <!-- Toolbar title -->
-    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:textColor">@color/textColorPrimary</item>
-        <item name="android:textSize">25sp</item>
-    </style>
     <!-- Toolbar settings -->
     <style name="ToolbarSettings" parent="ToolbarTheme">
         <item name="android:textColorSecondary">@color/textColorPrimary</item>
         <item name="android:textSize">25sp</item>
     </style>
-    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

@@ -1,13 +1,12 @@
 package com.antho.newsreader.view.activities.search.adapter;
-/** Search diff callback **/
-
 import com.antho.newsreader.model.search.Search;
 
 import java.util.List;
+import java.util.Objects;
 
 import androidx.recyclerview.widget.DiffUtil;
 /** Overrides diffUtil methods to improve software performance **/
-public class SearchDiffCallback  extends DiffUtil.Callback
+class SearchDiffCallback  extends DiffUtil.Callback
 {
     private final List<Search> oldList;
     private final List<Search> newList;
@@ -30,7 +29,7 @@ public class SearchDiffCallback  extends DiffUtil.Callback
     @Override
     public boolean areItemsTheSame(int oldItemPosition, int newItemPosition)
     {
-        return oldList.get(oldItemPosition).url() == newList.get(newItemPosition).url();
+        return Objects.equals(oldList.get(oldItemPosition).url(), newList.get(newItemPosition).url());
     }
     @Override
     public boolean areContentsTheSame(int oldItemPosition, int newItemPosition)

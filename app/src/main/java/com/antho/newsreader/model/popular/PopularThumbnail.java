@@ -1,6 +1,4 @@
 package com.antho.newsreader.model.popular;
-/** Most popular thumbnail**/
-
 import com.google.auto.value.AutoValue;
 import com.squareup.moshi.Json;
 import com.squareup.moshi.JsonAdapter;

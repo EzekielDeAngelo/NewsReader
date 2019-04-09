@@ -1,6 +1,4 @@
 package com.antho.newsreader.model;
-/** Zoned date time adapter **/
-
 import com.squareup.moshi.FromJson;
 import com.squareup.moshi.ToJson;
 
