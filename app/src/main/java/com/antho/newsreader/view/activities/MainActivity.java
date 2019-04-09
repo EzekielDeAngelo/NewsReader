@@ -48,7 +48,7 @@ public class MainActivity extends BaseActivity implements NewsAdapter.OnStoryCli
         setUpBottomNavigation();
         NOTIFICATION_CHANNEL_ID = NotificationUtil.createNotificationChannel(this);
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
     // Loads fragment based on index given as parameter
@@ -233,7 +233,7 @@ public class MainActivity extends BaseActivity implements NewsAdapter.OnStoryCli
             Intent intent = new Intent(MainActivity.this, NotificationsActivity.class);
             startActivity(intent);
         }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

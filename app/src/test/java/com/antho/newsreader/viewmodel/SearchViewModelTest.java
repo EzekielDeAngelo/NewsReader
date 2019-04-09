@@ -24,8 +24,7 @@ public class SearchViewModelTest
     private SearchViewModel viewModel;
     // Set up dummy viewmodel to perform tests
     @Before
-    public void setUp() throws Exception
-    {
+    public void setUp() {
         viewModel = new SearchViewModel();
     }
     //

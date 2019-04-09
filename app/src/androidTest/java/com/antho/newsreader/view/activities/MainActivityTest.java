@@ -31,14 +31,12 @@ public class  MainActivityTest
     @Rule
     public ActivityTestRule<MainActivity> mainActivityRule = new ActivityTestRule<>(MainActivity.class);
     @Before
-    public void setUp() throws Exception
-    {
+    public void setUp() {
         mainActivity = mainActivityRule.getActivity();
     }
     // Context of the app under test.
     @Test
-    public void useAppContext() throws Exception
-    {
+    public void useAppContext() {
         Context appContext = InstrumentationRegistry.getTargetContext();
         assertEquals("com.antho.newsreader", appContext.getPackageName());
     }

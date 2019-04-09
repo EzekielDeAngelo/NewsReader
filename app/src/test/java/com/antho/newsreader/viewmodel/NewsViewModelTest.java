@@ -24,8 +24,7 @@ public class NewsViewModelTest
     private NewsViewModel viewModel;
     // Set up dummy viewmodel to perform tests
     @Before
-    public void setUp() throws Exception
-    {
+    public void setUp() {
         viewModel = new NewsViewModel("BUSINESS_NEWS_TAG");
     }
     //

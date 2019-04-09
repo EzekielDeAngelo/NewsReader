@@ -23,8 +23,7 @@ public class PopularViewModelTest
     private PopularViewModel viewModel;
     // Set up dummy viewmodel to perform tests
     @Before
-    public void setUp() throws Exception
-    {
+    public void setUp() {
         viewModel = new PopularViewModel();
     }
     //

@@ -23,7 +23,7 @@ public class NotificationUtil
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, channelName, importance);
             channel.setDescription(channelDescription);
-            NotificationManager notificationManager = (NotificationManager) context.getSystemService(NotificationManager.class);
+            NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
             return channelId;
         }
