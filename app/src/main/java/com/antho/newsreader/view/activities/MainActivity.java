@@ -211,16 +211,16 @@ public class MainActivity extends BaseActivity implements NewsAdapter.OnStoryCli
         }
         if (id == R.id.nav_sports)
         {
-            Fragment fragmentBusiness = fragmentManager.findFragmentByTag(BUSINESS_NEWS_TAG);
+            Fragment fragmentBusiness = fragmentManager.findFragmentByTag(SPORTS_NEWS_TAG);
             if (fragmentBusiness == null)
                 fragmentBusiness = BusinessFragment.newInstance();
-            changeFragment(fragmentBusiness, BUSINESS_NEWS_TAG);
+            changeFragment(fragmentBusiness, SPORTS_NEWS_TAG);
         }
         if (id == R.id.nav_business)
         {
-            Fragment fragmentSports = fragmentManager.findFragmentByTag(SPORTS_NEWS_TAG);
+            Fragment fragmentSports = fragmentManager.findFragmentByTag(BUSINESS_NEWS_TAG);
             if (fragmentSports == null) fragmentSports = SportsFragment.newInstance();
-            changeFragment(fragmentSports, SPORTS_NEWS_TAG);
+            changeFragment(fragmentSports, BUSINESS_NEWS_TAG);
         }
         if (id == R.id.nav_search)
         {
